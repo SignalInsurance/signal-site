@@ -54,6 +54,8 @@ nav {
 .logo-name { font-family: 'Montserrat', sans-serif; font-size: 17px; font-weight: 800; letter-spacing: 0.11em; color: var(--blue); line-height: 1; }
 .logo-r2   { margin-top: 4px; padding-top: 4px; border-top: 1.5px solid rgba(26,75,140,0.18); }
 .logo-sub  { font-family: 'Montserrat', sans-serif; font-size: 7.5px; font-weight: 500; letter-spacing: 0.3em; color: var(--mid); text-transform: uppercase; }
+.logo-r3   { margin-top: 3px; }
+.logo-tech { font-family: 'Geist Mono', monospace; font-size: 7px; font-weight: 300; letter-spacing: 0.18em; color: var(--light); text-transform: uppercase; }
 
 .nav-links { display: flex; align-items: center; gap: 32px; }
 .nav-link { font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mid); text-decoration: none; transition: color .2s; }
@@ -96,6 +98,25 @@ nav {
 .badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--teal); box-shadow: 0 0 0 3px rgba(26,140,122,.2); animation: pulse 2.2s ease infinite; }
 @keyframes pulse { 0%,100% { box-shadow: 0 0 0 3px rgba(26,140,122,.2); } 50% { box-shadow: 0 0 0 8px rgba(26,140,122,.06); } }
 .badge-text { font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--blue); }
+
+.hero-positioning {
+  display: flex; align-items: center; gap: 14px;
+  margin-bottom: 32px;
+  opacity: 0; animation: fadeUp .7s ease forwards .45s;
+}
+.hero-positioning::before,
+.hero-positioning::after {
+  content: ''; display: block;
+  flex: 1; max-width: 36px; height: 1.5px; background: var(--gold);
+  opacity: 0.7;
+}
+.hero-pos-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px; font-weight: 800;
+  letter-spacing: 0.28em; text-transform: uppercase;
+  color: var(--gold);
+  white-space: nowrap;
+}
 
 .hero-h1 {
   font-family: 'Fraunces', serif;
@@ -341,10 +362,13 @@ footer {
   <div class="hero-text">
     <div class="hero-badge">
       <div class="badge-dot"></div>
-      <span class="badge-text">Now Raising — Founding Round · 2025</span>
+      <span class="badge-text">Now Raising — Founding Round · 2026</span>
+    </div>
+    <div class="hero-positioning">
+      <span class="hero-pos-text">Tech-Enabled P&amp;C Specialty Carrier</span>
     </div>
     <h1 class="hero-h1">Where <em>underwriting</em><br>talent meets<br><span class="g">modern technology.</span></h1>
-    <p class="hero-sub">Signal Insurance Group is a purpose-built specialty P&C carrier — combining deep underwriting discipline with a proprietary risk intelligence platform. We're raising our founding round and building relationships with investors, reinsurers, and distribution partners.</p>
+    <p class="hero-sub">Signal Insurance is rewriting what a specialty P&C carrier looks like. Modern technology in the hands of expert underwriters means better loss ratios, leaner operations, and a competitive edge that legacy carriers simply can't replicate. We're raising our founding round.</p>
     <div class="hero-btns">
       <a href="#contact" class="btn-primary">Request Investor Deck</a>
       <a href="#thesis"  class="btn-secondary">View Investment Thesis</a>
@@ -354,22 +378,26 @@ footer {
     <div class="hcard c1">
       <div class="hcard-ico"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1" y="5" width="3" height="8" rx=".5" fill="#1a4b8c" opacity=".7"/><rect x="6" y="2" width="3" height="12" rx=".5" fill="#1a4b8c"/><rect x="11" y="7" width="3" height="6" rx=".5" fill="#1a4b8c" opacity=".5"/></svg></div>
       <div><div class="hcard-lbl">Risk Engine</div><div class="hcard-val">Proprietary Pricing Model</div></div>
-      <div class="hcard-tag">POST /quote</div>
     </div>
     <div class="hcard c2">
-      <div class="hcard-ico"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="#c07d2a" stroke-width="1.2"/><circle cx="8" cy="8" r="3" stroke="#c07d2a" stroke-width="1.2"/><circle cx="8" cy="8" r="1" fill="#c07d2a"/></svg></div>
-      <div><div class="hcard-lbl">Data Layer</div><div class="hcard-val">Climate · Geo · Behavioral</div></div>
-      <div class="hcard-tag">GET /signals</div>
+      <div class="hcard-ico"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M1 8 Q4 4 8 6 Q12 8 15 4" stroke="#c07d2a" stroke-width="1.3" stroke-linecap="round" fill="none"/><circle cx="3" cy="10" r="1.5" fill="#c07d2a" opacity=".6"/><circle cx="8" cy="7" r="1.5" fill="#c07d2a" opacity=".8"/><circle cx="13" cy="5" r="1.5" fill="#c07d2a"/></svg></div>
+      <div><div class="hcard-lbl">External Data Feeds</div><div class="hcard-val">Cat · Flood · Credit · COPE</div></div>
     </div>
     <div class="hcard c3">
       <div class="hcard-ico"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 9L5 6l3 4 3-6 3 3" stroke="#1a8c7a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="14" cy="7" r="1.5" fill="#1a8c7a"/></svg></div>
       <div><div class="hcard-lbl">Portfolio Monitor</div><div class="hcard-val">Live Accumulation Analysis</div></div>
-      <div class="hcard-tag">GET /portfolio</div>
     </div>
     <div class="hcard c4">
       <div class="hcard-ico"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1.5" y="3.5" width="13" height="9" rx="1" stroke="#4a6a8a" stroke-width="1.2"/><path d="M4 7h8M4 9.5h5" stroke="#4a6a8a" stroke-width="1" stroke-linecap="round"/></svg></div>
       <div><div class="hcard-lbl">Reinsurance</div><div class="hcard-val">Institutional Tower Structure</div></div>
-      <div class="hcard-tag">PUT /policy</div>
+    </div>
+    <div class="hcard c1">
+      <div class="hcard-ico"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 4h7M2 8h5M2 12h3" stroke="#1a4b8c" stroke-width="1.2" stroke-linecap="round"/><circle cx="12" cy="9" r="3" stroke="#1a4b8c" stroke-width="1.2"/><path d="M11.3 9l.9.9 1.4-1.4" stroke="#1a4b8c" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div><div class="hcard-lbl">AI Submission Triage</div><div class="hcard-val">Automated Clearance &amp; Scoring</div></div>
+    </div>
+    <div class="hcard c2">
+      <div class="hcard-ico"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="4" cy="8" r="2.5" stroke="#c07d2a" stroke-width="1.2"/><circle cx="12" cy="4" r="2" stroke="#c07d2a" stroke-width="1.2"/><circle cx="12" cy="12" r="2" stroke="#c07d2a" stroke-width="1.2"/><line x1="6.4" y1="7" x2="10.2" y2="4.8" stroke="#c07d2a" stroke-width="1" opacity=".7"/><line x1="6.4" y1="9" x2="10.2" y2="11.2" stroke="#c07d2a" stroke-width="1" opacity=".7"/></svg></div>
+      <div><div class="hcard-lbl">Broker Data API</div><div class="hcard-val">Live Distribution Connect</div></div>
     </div>
   </div>
 </section>
@@ -391,15 +419,15 @@ footer {
   <div>
     <div class="trow reveal">
       <span class="tnum">01</span>
-      <div><h3 class="ttitle">A Hardening Market, Perfectly Timed</h3><p class="tbody">P&C specialty lines are in a prolonged hard market cycle. Incumbent carriers are retreating from complex risks, creating white space for disciplined new entrants with the right expertise to command superior pricing and terms. Signal was built for exactly this moment.</p></div>
+      <div><h3 class="ttitle">Discipline Wins in a Softening Market</h3><p class="tbody">As the market softens, underwriting discipline and operational efficiency become the defining edge. Carriers that rely on favourable conditions will struggle. Those with rigorous risk selection, lean operations, and data-driven pricing will differentiate. Signal Insurance is built precisely for this environment.</p></div>
     </div>
     <div class="trow reveal">
       <span class="tnum">02</span>
-      <div><h3 class="ttitle">A Platform That Compounds Over Time</h3><p class="tbody">Our proprietary risk intelligence platform integrates climate, geospatial, and behavioral data streams that legacy carriers cannot replicate. Our models are trained on forward-looking risk cohorts — not historical loss tables. That edge widens with every policy written.</p></div>
+      <div><h3 class="ttitle">Built on APIs, Not Spreadsheets</h3><p class="tbody">APIs and data exchange are fundamental to the operating model of Signal Insurance. Traditional insurers run on email, PDFs, and spreadsheets: slow, error-prone, and impossible to scale. Signal is designed from the ground up around real-time data connections, automated workflows, and a platform that compounds in value with every risk written.</p></div>
     </div>
     <div class="trow reveal">
       <span class="tnum">03</span>
-      <div><h3 class="ttitle">Operators Who've Built This Before</h3><p class="tbody">Our founding team has built, scaled, and exited specialty carriers. We have reinsurer relationships, MGA distribution, and regulatory pathways already in motion. We are not learning the business — we are executing the next generation of it with better tools.</p></div>
+      <div><h3 class="ttitle">Operators Who've Built This Before</h3><p class="tbody">Our founding team has built, scaled, and exited specialty carriers. We have reinsurer relationships, MGA distribution, and regulatory pathways already in motion. We are not here to learn the business. We are here to build the next generation P&C carrier, with the tools, talent, and ambition to do it right.</p></div>
     </div>
   </div>
 </section>
@@ -410,7 +438,7 @@ footer {
   <div class="plat-inner">
     <p class="stag reveal">Technology Platform</p>
     <h2 class="stitle reveal">The infrastructure<br>behind <em>better decisions.</em></h2>
-    <p class="plat-sub reveal">Signal's tech stack connects underwriting judgment to real-time data signals — creating a closed loop between risk selection, pricing accuracy, and portfolio performance.</p>
+    <p class="plat-sub reveal">Signal's tech stack connects underwriting judgment to real-time data signals, creating a closed loop between risk selection, pricing accuracy, and portfolio performance.</p>
     <div class="plat-grid">
       <div class="pcard reveal">
         <svg class="pcard-icon" viewBox="0 0 38 38" fill="none"><rect x="1" y="1" width="36" height="36" rx="6" fill="rgba(26,75,140,.12)" stroke="rgba(26,75,140,.25)" stroke-width="1"/><rect x="8" y="17" width="5" height="12" rx="1" fill="#1a4b8c" opacity=".7"/><rect x="16" y="11" width="5" height="18" rx="1" fill="#1a4b8c"/><rect x="24" y="21" width="5" height="8" rx="1" fill="#1a4b8c" opacity=".5"/></svg>
@@ -439,13 +467,13 @@ footer {
     <h2 class="stitle reveal">Underserved complexity<br>is our moat.</h2>
     <p class="market-sub reveal">As weather volatility, cyber exposure, and supply chain fragility reshape the risk landscape, legacy carriers retreat from the very segments that need coverage most.</p>
     <div class="seg-list reveal">
-      <div class="seg"><span class="seg-name">Commercial Property</span><div class="seg-bar-bg"><div class="seg-bar-fg" style="width:90%"></div></div><span class="seg-sz">$280B</span></div>
-      <div class="seg"><span class="seg-name">Excess &amp; Surplus Lines</span><div class="seg-bar-bg"><div class="seg-bar-fg" style="width:80%"></div></div><span class="seg-sz">$100B+</span></div>
-      <div class="seg"><span class="seg-name">MGA Programs &amp; Delegated Authority</span><div class="seg-bar-bg"><div class="seg-bar-fg" style="width:74%"></div></div><span class="seg-sz">$75B+</span></div>
-      <div class="seg"><span class="seg-name">Construction Risk</span><div class="seg-bar-bg"><div class="seg-bar-fg" style="width:68%"></div></div><span class="seg-sz">$51B</span></div>
-      <div class="seg"><span class="seg-name">Technology E&amp;O</span><div class="seg-bar-bg"><div class="seg-bar-fg" style="width:58%"></div></div><span class="seg-sz">$42B</span></div>
-      <div class="seg"><span class="seg-name">Environmental Liability</span><div class="seg-bar-bg"><div class="seg-bar-fg" style="width:45%"></div></div><span class="seg-sz">$18B</span></div>
-      <div class="seg"><span class="seg-name">Inland Marine</span><div class="seg-bar-bg"><div class="seg-bar-fg" style="width:38%"></div></div><span class="seg-sz">$15B</span></div>
+      <div class="seg"><span class="seg-name">Commercial Property</span><div class="seg-bar-bg"><div class="seg-bar-fg" style="width:90%"></div></div><span class="seg-sz">$280B+</span></div>
+      <div class="seg"><span class="seg-name">MGA Programs &amp; Delegated Authority</span><div class="seg-bar-bg"><div class="seg-bar-fg" style="width:78%"></div></div><span class="seg-sz">$110B+</span></div>
+      <div class="seg"><span class="seg-name">Excess &amp; Surplus Lines</span><div class="seg-bar-bg"><div class="seg-bar-fg" style="width:72%"></div></div><span class="seg-sz">$100B+</span></div>
+      <div class="seg"><span class="seg-name">Construction Risk</span><div class="seg-bar-bg"><div class="seg-bar-fg" style="width:68%"></div></div><span class="seg-sz">$51B+</span></div>
+      <div class="seg"><span class="seg-name">Technology E&amp;O</span><div class="seg-bar-bg"><div class="seg-bar-fg" style="width:58%"></div></div><span class="seg-sz">$42B+</span></div>
+      <div class="seg"><span class="seg-name">Environmental Liability</span><div class="seg-bar-bg"><div class="seg-bar-fg" style="width:45%"></div></div><span class="seg-sz">$18B+</span></div>
+      <div class="seg"><span class="seg-name">Inland Marine</span><div class="seg-bar-bg"><div class="seg-bar-fg" style="width:38%"></div></div><span class="seg-sz">$15B+</span></div>
     </div>
   </div>
   <div class="market-visual"><canvas id="mcanvas"></canvas></div>
@@ -470,8 +498,8 @@ footer {
     <h2 class="cta-h2 reveal">The signal is clear.<br>Is your <em>timing?</em></h2>
     <p class="cta-p reveal">We're raising our founding round and welcoming conversations with investors, reinsurers, and brokers who want to be part of building the next generation specialty carrier.</p>
     <div class="cta-form reveal">
-      <input class="cta-in" type="email" placeholder="Your email address">
-      <button class="cta-btn">Request Deck →</button>
+      <input class="cta-in" type="email" id="cta-email" placeholder="Your email address">
+      <button class="cta-btn" id="cta-submit">Request Deck →</button>
     </div>
     <p class="cta-note reveal">Investors · Reinsurers · Brokers · All inquiries held in strict confidence</p>
   </div>
@@ -824,6 +852,14 @@ const ro = new IntersectionObserver(es => es.forEach(e => {
   if (e.isIntersecting) { e.target.classList.add('on'); ro.unobserve(e.target); }
 }), { threshold: .1 });
 document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+
+/* ══ CTA FORM — mailto ══ */
+document.getElementById('cta-submit').addEventListener('click', function() {
+  const email = document.getElementById('cta-email').value;
+  const subject = encodeURIComponent('Investor Deck Request');
+  const body = encodeURIComponent('Hi,\n\nI would like to request the Signal Insurance investor deck.\n\nMy email: ' + (email || 'not provided') + '\n\nThank you.');
+  window.location.href = 'mailto:hello@signalinsurancegroup.com?subject=' + subject + '&body=' + body;
+});
 </script>
 </body>
 </html>

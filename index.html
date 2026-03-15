@@ -54,11 +54,15 @@ nav {
   align-items: center;
   padding: 120px 52px 80px; gap: 48px;
 }
-.hero-text { position: relative; padding: 48px 40px 48px 0; }
+.hero-text { position: relative; padding: 48px 36px 48px 36px; margin: 0 44px; }
 .hero-text::before {
   content: ''; position: absolute;
-  inset: -16px -16px -16px -32px;
-  background: rgba(237,242,247,0.46);
+  inset: 0;
+  background: radial-gradient(ellipse 90% 85% at 50% 50%,
+    rgba(237,242,247,0.88) 0%,
+    rgba(237,242,247,0.78) 45%,
+    rgba(237,242,247,0.38) 75%,
+    rgba(237,242,247,0) 100%);
   backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
   z-index: -1;
 }
@@ -73,7 +77,8 @@ nav {
 .badge-text { font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--blue); }
 
 .hero-stamp {
-  display: inline-flex; align-items: center; gap: 8px;
+  display: flex; align-items: center; gap: 8px;
+  flex-wrap: wrap;
   margin-bottom: 28px;
   opacity: 0; animation: fadeUp .7s ease forwards .45s;
 }
@@ -351,7 +356,7 @@ footer { background: var(--ink); padding: 44px 52px; display: flex; align-items:
       <span class="hero-stamp-chip" style="background:var(--teal);">Tech-Enabled</span>
     </div>
     <h1 class="hero-h1">Where <em>underwriting</em><br>talent meets<br><span class="g">modern technology.</span></h1>
-    <p class="hero-sub">Signal Insurance is rewriting what a specialty P&C carrier looks like. Modern technology in the hands of expert underwriters means better loss ratios, leaner operations, and a competitive edge that legacy carriers simply can't replicate. We are in early discussions and would welcome conversations with investors, reinsurers, and brokers.</p>
+    <p class="hero-sub">Signal Insurance is rewriting what a specialty P&C carrier looks like. Modern technology in the hands of expert underwriters means better loss ratios, leaner operations, and a competitive edge that legacy carriers simply can't replicate. We would welcome conversations with investors, reinsurers, and brokers.</p>
     <div class="hero-btns">
       <a href="#contact" class="btn-primary">Request Investor Deck</a>
       <a href="#thesis"  class="btn-secondary">View Investment Thesis</a>

@@ -26,9 +26,7 @@
 html { scroll-behavior: smooth; }
 body { background: var(--bg); color: var(--ink); font-family: 'Geist', sans-serif; overflow-x: hidden; }
 
-/* ── Background canvas ── */
 #bg { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
-
 .page { position: relative; z-index: 1; }
 
 /* ══ NAV ══ */
@@ -40,10 +38,10 @@ nav {
   backdrop-filter: blur(24px);
   border-bottom: 1px solid var(--rule);
 }
-.logo { text-decoration: none; display: flex; align-items: center; line-height: 1; gap: 0; }
-.logo-dot  { font-family: 'Montserrat', sans-serif; font-size: 22px; font-weight: 900; color: var(--gold); line-height: 1; margin-right: 2px; }
+.logo      { text-decoration: none; display: flex; align-items: center; gap: 0; line-height: 1; }
+.logo-dot  { font-family: 'Montserrat', sans-serif; font-size: 22px; font-weight: 900; color: var(--gold); line-height: 1; margin-right: 1px; }
 .logo-name { font-family: 'Montserrat', sans-serif; font-size: 16px; font-weight: 900; letter-spacing: 0.12em; color: var(--blue); line-height: 1; }
-.logo-sub  { font-family: 'Montserrat', sans-serif; font-size: 16px; font-weight: 300; letter-spacing: 0.04em; color: var(--blue); opacity: 0.72; line-height: 1; margin-left: 7px; }
+.logo-ins  { font-family: 'Montserrat', sans-serif; font-size: 16px; font-weight: 300; letter-spacing: 0.04em; color: var(--blue); opacity: 0.7; line-height: 1; margin-left: 8px; }
 .nav-links { display: flex; align-items: center; gap: 32px; }
 .nav-link  { font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mid); text-decoration: none; transition: color .2s; }
 .nav-link:hover { color: var(--blue); }
@@ -59,11 +57,9 @@ nav {
 }
 .hero-text { position: relative; padding: 56px 60px 56px 0; }
 .hero-text::before {
-  content: '';
-  position: absolute; inset: -24px -44px -24px -64px;
+  content: ''; position: absolute; inset: -24px -44px -24px -64px;
   background: rgba(237,242,247,0.52);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
   z-index: -1;
 }
 .hero-badge {
@@ -72,31 +68,21 @@ nav {
   padding: 7px 16px; margin-bottom: 20px;
   opacity: 0; animation: fadeUp .7s ease forwards .3s;
 }
-.badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--teal); box-shadow: 0 0 0 3px rgba(26,140,122,.2); animation: pulse 2.2s ease infinite; }
-@keyframes pulse { 0%,100% { box-shadow: 0 0 0 3px rgba(26,140,122,.2); } 50% { box-shadow: 0 0 0 8px rgba(26,140,122,.06); } }
+.badge-dot  { width: 6px; height: 6px; border-radius: 50%; background: var(--teal); box-shadow: 0 0 0 3px rgba(26,140,122,.2); animation: blink 2.2s ease infinite; }
+@keyframes blink { 0%,100%{box-shadow:0 0 0 3px rgba(26,140,122,.2);}50%{box-shadow:0 0 0 8px rgba(26,140,122,.06);} }
 .badge-text { font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--blue); }
-
 .hero-positioning {
   display: flex; align-items: center; gap: 14px;
   margin-bottom: 32px;
   opacity: 0; animation: fadeUp .7s ease forwards .45s;
 }
-.hero-positioning::before,
-.hero-positioning::after {
-  content: ''; display: block;
-  flex: 1; max-width: 36px; height: 1.5px; background: var(--gold); opacity: 0.7;
+.hero-positioning::before, .hero-positioning::after {
+  content: ''; display: block; flex: 1; max-width: 36px; height: 1.5px; background: var(--gold); opacity: 0.7;
 }
-.hero-pos-text {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 12px; font-weight: 800;
-  letter-spacing: 0.28em; text-transform: uppercase;
-  color: var(--gold); white-space: nowrap;
-}
+.hero-pos-text { font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 800; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); white-space: nowrap; }
 .hero-h1 {
-  font-family: 'Fraunces', serif;
-  font-size: clamp(46px, 6vw, 88px);
-  font-weight: 300; line-height: 1.04; color: var(--ink);
-  margin-bottom: 28px;
+  font-family: 'Fraunces', serif; font-size: clamp(46px,6vw,88px);
+  font-weight: 300; line-height: 1.04; color: var(--ink); margin-bottom: 28px;
   text-shadow: 0 1px 12px rgba(237,242,247,0.6);
   opacity: 0; animation: fadeUp .9s ease forwards .5s;
 }
@@ -110,7 +96,7 @@ nav {
 }
 .hero-btns { display: flex; align-items: center; gap: 28px; opacity: 0; animation: fadeUp .9s ease forwards .9s; }
 .btn-primary   { background: var(--blue); color: #fff; border: none; padding: 16px 36px; font-family: 'Montserrat', sans-serif; font-size: 11.5px; font-weight: 600; letter-spacing: .08em; text-decoration: none; display: inline-block; transition: background .2s, transform .15s; }
-.btn-primary:hover { background: var(--blue2); transform: translateY(-1px); }
+.btn-primary:hover  { background: var(--blue2); transform: translateY(-1px); }
 .btn-secondary { font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: var(--mid); text-decoration: none; display: flex; align-items: center; gap: 7px; transition: color .2s; }
 .btn-secondary::after { content: '→'; font-size: 13px; }
 .btn-secondary:hover { color: var(--blue); }
@@ -150,19 +136,19 @@ nav {
 .thesis-sticky { position: sticky; top: 100px; }
 .trow { padding: 42px 0; border-bottom: 1px solid var(--rule); display: grid; grid-template-columns: 36px 1fr; gap: 26px; align-items: start; }
 .trow:first-child { border-top: 1px solid var(--rule); }
-.tnum  { font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: .1em; color: var(--light); padding-top: 4px; }
+.tnum   { font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: .1em; color: var(--light); padding-top: 4px; }
 .ttitle { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 400; color: var(--ink); margin-bottom: 11px; }
 .tbody  { font-size: 14px; line-height: 1.85; color: var(--mid); font-weight: 300; }
 
 /* ══ PLATFORM ══ */
 .platform { background: var(--ink); padding: 110px 52px; position: relative; overflow: hidden; }
-#pcanvas { position: absolute; inset: 0; width: 100%; height: 100%; opacity: .38; }
+#pcanvas  { position: absolute; inset: 0; width: 100%; height: 100%; opacity: .38; }
 .plat-inner { position: relative; z-index: 1; }
 .plat-inner .stag { color: var(--gold2); }
 .plat-inner .stag::before { background: var(--gold2); }
 .plat-inner .stitle { color: #f0f6ff; }
 .plat-inner .stitle em { color: var(--gold2); }
-.plat-sub { font-size: 15px; font-weight: 300; line-height: 1.8; color: rgba(200,218,238,.65); max-width: 540px; margin: 22px 0 60px; }
+.plat-sub  { font-size: 15px; font-weight: 300; line-height: 1.8; color: rgba(200,218,238,.65); max-width: 540px; margin: 22px 0 60px; }
 .plat-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 2px; }
 .pcard { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); padding: 34px 30px; position: relative; overflow: hidden; transition: background .3s, border-color .3s; }
 .pcard::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: var(--gold); transform: scaleX(0); transition: transform .35s ease; transform-origin: left; }
@@ -183,7 +169,7 @@ nav {
 .seg-bar-bg { width: 72px; height: 3px; background: rgba(26,75,140,.1); flex-shrink: 0; }
 .seg-bar-fg { height: 100%; background: var(--blue); }
 .seg-sz { font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: .1em; color: var(--blue); width: 52px; text-align: right; flex-shrink: 0; }
-.market-visual { height: 420px; position: relative; }
+.market-visual { height: 420px; }
 #mcanvas { width: 100%; height: 100%; }
 
 /* ══ TEAM ══ */
@@ -191,7 +177,7 @@ nav {
 .team-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; margin-top: 54px; }
 .tcard { background: #fff; border: 1px solid var(--rule); padding: 38px 34px; position: relative; overflow: hidden; transition: box-shadow .3s; }
 .tcard:hover { box-shadow: 0 8px 40px rgba(13,25,41,.08); }
-.tcard-bar { position: absolute; top: 0; left: 0; right: 0; height: 3px; }
+.tcard-bar    { position: absolute; top: 0; left: 0; right: 0; height: 3px; }
 .tcard-bar.bl { background: var(--blue); }
 .tcard-bar.go { background: var(--gold); }
 .tcard-bar.te { background: var(--teal); }
@@ -201,7 +187,7 @@ nav {
 .tcard-prev { font-family: 'Geist Mono', monospace; font-size: 9.5px; letter-spacing: .1em; color: var(--light); }
 
 /* ══ CTA ══ */
-.cta { background: linear-gradient(155deg, #0d1929 0%, #0f2040 55%, #0a1f18 100%); padding: 130px 52px; text-align: center; position: relative; overflow: hidden; }
+.cta { background: linear-gradient(155deg,#0d1929 0%,#0f2040 55%,#0a1f18 100%); padding: 130px 52px; text-align: center; position: relative; overflow: hidden; }
 #ccanvas { position: absolute; inset: 0; width: 100%; height: 100%; opacity: .45; }
 .cta-inner { position: relative; z-index: 1; }
 .cta-tag { font-family: 'Geist Mono', monospace; font-size: 9.5px; letter-spacing: .28em; color: var(--gold2); text-transform: uppercase; display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 26px; }
@@ -225,32 +211,32 @@ nav {
 .modal-close:hover { color: var(--ink); }
 .modal-eyebrow { font-family: 'Geist Mono', monospace; font-size: 9px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
 .modal-title { font-family: 'Fraunces', serif; font-size: 26px; font-weight: 300; color: var(--ink); margin-bottom: 10px; }
-.modal-body { font-family: 'Geist', sans-serif; font-size: 13.5px; color: var(--mid); line-height: 1.75; margin-bottom: 28px; }
-.modal-address-box { background: var(--bg); padding: 18px 20px; margin-bottom: 24px; border-left: 3px solid var(--blue); }
-.modal-address-label { font-family: 'Geist Mono', monospace; font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--light); margin-bottom: 6px; }
-.modal-address { font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 700; color: var(--blue); }
-.modal-actions { display: flex; gap: 10px; }
-.modal-open-email { flex: 1; background: var(--blue); color: #fff; padding: 14px 20px; font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-decoration: none; text-align: center; display: block; transition: background .2s; }
-.modal-open-email:hover { background: var(--blue2); }
+.modal-body  { font-family: 'Geist', sans-serif; font-size: 13.5px; color: var(--mid); line-height: 1.75; margin-bottom: 28px; }
+.modal-addr-box { background: var(--bg); padding: 18px 20px; margin-bottom: 24px; border-left: 3px solid var(--blue); }
+.modal-addr-lbl { font-family: 'Geist Mono', monospace; font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--light); margin-bottom: 6px; }
+.modal-addr     { font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 700; color: var(--blue); }
+.modal-actions  { display: flex; gap: 10px; }
+.modal-email-a  { flex: 1; background: var(--blue); color: #fff; padding: 14px 20px; font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-decoration: none; text-align: center; display: block; transition: background .2s; }
+.modal-email-a:hover { background: var(--blue2); }
 .modal-copy-btn { background: var(--bg); border: 1px solid var(--rule); color: var(--mid); padding: 14px 20px; font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; cursor: pointer; transition: background .2s, color .2s; white-space: nowrap; }
 .modal-copy-btn:hover { background: #fff; color: var(--ink); }
 
 /* ══ FOOTER ══ */
 footer { background: var(--ink); padding: 44px 52px; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(255,255,255,.1); }
-.fl-logo { display: flex; align-items: center; line-height: 1; gap: 0; }
-.fl-dot  { font-family: 'Montserrat', sans-serif; font-size: 20px; font-weight: 900; color: var(--gold); margin-right: 2px; line-height: 1; }
+.fl-logo { display: flex; align-items: center; gap: 0; margin-bottom: 8px; }
+.fl-dot  { font-family: 'Montserrat', sans-serif; font-size: 20px; font-weight: 900; color: var(--gold); line-height: 1; margin-right: 1px; }
 .fl-name { font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 900; letter-spacing: .12em; color: rgba(215,230,248,.9); }
-.fl-sub  { font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 300; letter-spacing: .04em; color: rgba(215,230,248,.6); margin-left: 7px; }
-.fl-url  { font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: .14em; color: rgba(200,218,238,.38); margin-top: 7px; }
+.fl-ins  { font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 300; letter-spacing: .04em; color: rgba(215,230,248,.6); margin-left: 8px; }
+.fl-url  { font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: .14em; color: rgba(200,218,238,.38); }
 .fl-legal { font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: .06em; color: rgba(200,218,238,.52); text-align: right; max-width: 400px; line-height: 1.8; }
 
 /* ══ ANIMATIONS ══ */
-@keyframes fadeUp  { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
-@keyframes fadeIn  { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeUp  { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+@keyframes fadeIn  { from{opacity:0} to{opacity:1} }
 .reveal { opacity:0; transform:translateY(22px); transition: opacity .8s ease, transform .8s ease; }
 .reveal.on { opacity:1; transform:none; }
 
-/* ══ RESPONSIVE ══ */
+/* ══ TABLET ══ */
 @media (max-width: 960px) {
   nav { padding: 18px 24px; }
   .nav-links .nav-link { display: none; }
@@ -274,98 +260,57 @@ footer { background: var(--ink); padding: 44px 52px; display: flex; align-items:
   .modal-box { padding: 32px 24px; }
 }
 
-/* ══ MOBILE — iPhone optimised ══ */
+/* ══ MOBILE — iPhone ══ */
 @media (max-width: 480px) {
   nav { padding: 16px 20px; }
-  .logo-name { font-size: 15px; }
-  .logo-dot  { font-size: 17px; }
-
-  .hero {
-    min-height: 100svh;
-    padding: 96px 20px 52px;
-    align-items: flex-start;
-  }
-  .hero-text {
-    padding: 0;
-  }
-  .hero-text::before {
-    inset: -12px -24px -12px -24px;
-    background: rgba(237,242,247,0.72);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-  }
-
-  .hero-badge {
-    padding: 6px 12px;
-    margin-bottom: 16px;
-  }
+  .logo-name { font-size: 14px; }
+  .logo-dot  { font-size: 19px; }
+  .logo-ins  { font-size: 14px; }
+  .hero { min-height: 100svh; padding: 96px 20px 52px; align-items: flex-start; }
+  .hero-text { padding: 0; }
+  .hero-text::before { inset: -12px -24px -12px -24px; background: rgba(237,242,247,0.72); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
+  .hero-badge { padding: 6px 12px; margin-bottom: 16px; }
   .badge-text { font-size: 8.5px; letter-spacing: .14em; }
-
   .hero-positioning { margin-bottom: 20px; gap: 10px; }
-  .hero-pos-text    { font-size: 9.5px; letter-spacing: 0.2em; }
-
-  .hero-h1 {
-    font-size: clamp(36px, 10vw, 52px);
-    margin-bottom: 20px;
-    line-height: 1.08;
-  }
-  .hero-sub {
-    font-size: 14px;
-    line-height: 1.7;
-    margin-bottom: 36px;
-  }
-  .hero-btns {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
-  }
-  .btn-primary {
-    width: 100%;
-    text-align: center;
-    padding: 15px 24px;
-    font-size: 11px;
-  }
+  .hero-pos-text { font-size: 9.5px; letter-spacing: 0.2em; }
+  .hero-h1 { font-size: clamp(36px,10vw,52px); margin-bottom: 20px; line-height: 1.08; }
+  .hero-sub { font-size: 14px; line-height: 1.7; margin-bottom: 36px; }
+  .hero-btns { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .btn-primary { width: 100%; text-align: center; padding: 15px 24px; font-size: 11px; }
   .btn-secondary { font-size: 9.5px; }
-
   .strip { grid-template-columns: repeat(2,1fr); }
   .strip-cell { padding: 28px 20px; }
   .strip-n { font-size: 36px; }
   .strip-n sup { font-size: 17px; }
   .strip-l { font-size: 8.5px; }
-
   .thesis { padding: 60px 20px; gap: 28px; }
   .ttitle { font-size: 19px; }
   .tbody  { font-size: 13.5px; }
-
   .platform { padding: 60px 20px; }
-  .plat-grid { grid-template-columns: 1fr; gap: 2px; }
+  .plat-grid { grid-template-columns: 1fr; }
   .plat-sub { font-size: 14px; margin-bottom: 36px; }
-
-  .market  { padding: 60px 20px; }
-  .seg     { padding: 11px 14px; }
+  .market { padding: 60px 20px; }
+  .seg { padding: 11px 14px; }
   .seg-name { font-size: 11px; }
   .seg-bar-bg { width: 48px; }
-  .seg-sz  { font-size: 9px; width: 40px; }
-
-  .team    { padding: 60px 20px; }
-  .tcard   { padding: 28px 22px; }
+  .seg-sz { font-size: 9px; width: 40px; }
+  .team { padding: 60px 20px; }
+  .tcard { padding: 28px 22px; }
   .tcard-name { font-size: 17px; }
-
-  .cta     { padding: 72px 20px; }
-  .cta-h2  { font-size: clamp(30px, 8vw, 48px); }
-  .cta-p   { font-size: 14px; }
-  .cta-in  { padding: 14px 16px; font-size: 13px; }
+  .cta { padding: 72px 20px; }
+  .cta-h2 { font-size: clamp(30px,8vw,48px); }
+  .cta-p { font-size: 14px; }
+  .cta-in { padding: 14px 16px; font-size: 13px; }
   .cta-btn { padding: 14px 20px; font-size: 10.5px; }
   .cta-note { font-size: 8.5px; }
-
-  footer   { padding: 32px 20px; }
+  footer { padding: 32px 20px; }
   .fl-name { font-size: 13px; }
+  .fl-ins  { font-size: 13px; }
   .fl-legal { font-size: 9px; }
-
   .modal-box { padding: 28px 20px; width: 94%; }
   .modal-title { font-size: 22px; }
   .modal-actions { flex-direction: column; }
-  .modal-address { font-size: 13px; word-break: break-all; }
+  .modal-addr { font-size: 13px; word-break: break-all; }
 }
 </style>
 </head>
@@ -378,7 +323,7 @@ footer { background: var(--ink); padding: 44px 52px; display: flex; align-items:
 <!-- NAV -->
 <nav>
   <a href="#" class="logo">
-    <span class="logo-dot">·</span><span class="logo-name">SIGNAL</span><span class="logo-sub">Insurance</span>
+    <span class="logo-dot">·</span><span class="logo-name">SIGNAL</span><span class="logo-ins">Insurance</span>
   </a>
   <div class="nav-links">
     <a href="#thesis"   class="nav-link">Thesis</a>
@@ -578,12 +523,12 @@ footer { background: var(--ink); padding: 44px 52px; display: flex; align-items:
     <p class="modal-eyebrow">Investor Deck Request</p>
     <h3 class="modal-title">Get in touch</h3>
     <p class="modal-body">Send us an email and we'll get back to you with the investor deck and arrange a conversation.</p>
-    <div class="modal-address-box">
-      <p class="modal-address-label">Send to</p>
-      <p class="modal-address"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b1d9d4dddddef1c2d8d6dfd0ddd8dfc2c4c3d0dfd2d4d6c3dec4c19fd2dedc">[email&#160;protected]</a></p>
+    <div class="modal-addr-box">
+      <p class="modal-addr-lbl">Send to</p>
+      <p class="modal-addr">hello@signalinsurancegroup.com</p>
     </div>
     <div class="modal-actions">
-      <a class="modal-open-email" id="modal-email-link" href="/cdn-cgi/l/email-protection#59313c353536192a303e37383530372a2c2b38373a3c3e2b362c29773a3634662a2c3b333c3a2d6410372f3c2a2d362b7c6b691d3c3a327c6b690b3c282c3c2a2d">Open Email App</a>
+      <a class="modal-email-a" id="modal-email-link" href="mailto:hello@signalinsurancegroup.com?subject=Investor%20Deck%20Request">Open Email App</a>
       <button class="modal-copy-btn" id="modal-copy">Copy Address</button>
     </div>
   </div>
@@ -593,286 +538,158 @@ footer { background: var(--ink); padding: 44px 52px; display: flex; align-items:
 <footer>
   <div>
     <div class="fl-logo">
-      <span class="fl-dot">·</span><span class="fl-name">SIGNAL</span><span class="fl-sub">Insurance</span>
+      <span class="fl-dot">·</span><span class="fl-name">SIGNAL</span><span class="fl-ins">Insurance</span>
     </div>
     <div class="fl-url">signalinsurancegroup.com</div>
   </div>
   <div class="fl-legal">This page is for informational purposes only and does not constitute an offer to sell or solicitation to buy any securities. For accredited investors only.</div>
 </footer>
 
-</div><!-- .page -->
+</div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-/* ══════════════════════════════════════════════
-   BACKGROUND — Abstract API node graph
-   10 nodes · 14 orthogonal pipes · max 4 signals
-══════════════════════════════════════════════ */
-(function () {
-  const cv = document.getElementById('bg');
-  const ctx = cv.getContext('2d');
-
-  const NODE_DEFS = [
-    {id:'a',hex:'#1a4b8c'},{id:'b',hex:'#c07d2a'},
-    {id:'c',hex:'#1a4b8c'},{id:'d',hex:'#1a8c7a'},
-    {id:'e',hex:'#4a6a8a'},{id:'f',hex:'#1a4b8c'},
-    {id:'g',hex:'#c07d2a'},{id:'h',hex:'#1a8c7a'},
+<script>
+/* ══ BACKGROUND NODE GRAPH ══ */
+(function(){
+  const cv=document.getElementById('bg'), ctx=cv.getContext('2d');
+  const NODES=[
+    {id:'a',hex:'#1a4b8c'},{id:'b',hex:'#c07d2a'},{id:'c',hex:'#1a4b8c'},{id:'d',hex:'#1a8c7a'},
+    {id:'e',hex:'#4a6a8a'},{id:'f',hex:'#1a4b8c'},{id:'g',hex:'#c07d2a'},{id:'h',hex:'#1a8c7a'},
     {id:'i',hex:'#1a4b8c'},{id:'j',hex:'#4a6a8a'},
   ];
-  const CONN_IDS = [
-    ['a','b'],['b','c'],['a','d'],['c','e'],
-    ['d','f'],['f','g'],['b','f'],['e','h'],
-    ['g','h'],['f','i'],['h','j'],['i','j'],
-    ['c','g'],['d','i'],
-  ];
-  const POS = [
-    [0.08,0.13],[0.28,0.07],[0.55,0.15],[0.80,0.20],
-    [0.15,0.44],[0.44,0.37],[0.70,0.43],[0.90,0.54],
-    [0.22,0.72],[0.60,0.78],
-  ];
-  const MAX_SIGNALS = 4;
-  const PALETTE = [
-    {rgb:[26,75,140],  bright:'#4a8fd4'},
-    {rgb:[26,75,140],  bright:'#2f6ab8'},
-    {rgb:[192,125,42], bright:'#e0962e'},
-    {rgb:[26,140,122], bright:'#30c4a8'},
-  ];
-
-  let W, H, nodes=[], conns=[], signals=[], raf;
-
-  function hexToRgb(h) {
-    return [parseInt(h.slice(1,3),16), parseInt(h.slice(3,5),16), parseInt(h.slice(5,7),16)];
+  const CONNS=[['a','b'],['b','c'],['a','d'],['c','e'],['d','f'],['f','g'],['b','f'],['e','h'],['g','h'],['f','i'],['h','j'],['i','j'],['c','g'],['d','i']];
+  const POS=[[.08,.13],[.28,.07],[.55,.15],[.80,.20],[.15,.44],[.44,.37],[.70,.43],[.90,.54],[.22,.72],[.60,.78]];
+  const PAL=[{rgb:[26,75,140],bright:'#4a8fd4'},{rgb:[26,75,140],bright:'#2f6ab8'},{rgb:[192,125,42],bright:'#e0962e'},{rgb:[26,140,122],bright:'#30c4a8'}];
+  let W,H,nodes=[],conns=[],signals=[],raf;
+  function h2r(h){return[parseInt(h.slice(1,3),16),parseInt(h.slice(3,5),16),parseInt(h.slice(5,7),16)];}
+  function layout(){
+    nodes=NODES.map((d,i)=>({...d,rgb:h2r(d.hex),x:POS[i][0]*W,y:POS[i][1]*H,alpha:0,pulse:0}));
+    conns=CONNS.map(([a,b])=>({a:nodes.find(n=>n.id===a),b:nodes.find(n=>n.id===b)}));
+    signals=[];
+    [...conns].sort(()=>Math.random()-.5).slice(0,4).forEach((c,i)=>spawn(c,i/4));
   }
-
-  function layout() {
-    nodes = NODE_DEFS.map((d,i) => ({
-      ...d, rgb: hexToRgb(d.hex),
-      x: POS[i][0]*W, y: POS[i][1]*H,
-      alpha: 0, pulse: 0,
-    }));
-    conns = CONN_IDS.map(([aId,bId]) => ({
-      a: nodes.find(n=>n.id===aId),
-      b: nodes.find(n=>n.id===bId),
-    }));
-    signals = [];
-    [...conns].sort(()=>Math.random()-.5).slice(0,MAX_SIGNALS).forEach((c,i) => spawnSignal(c, i/MAX_SIGNALS));
-  }
-
-  function resize() {
-    W = cv.width  = window.innerWidth;
-    H = cv.height = window.innerHeight;
-    cancelAnimationFrame(raf);
-    layout(); tick();
-  }
-
-  function getPath(a, b) {
-    const mx = a.x + (b.x - a.x) * 0.5;
-    return [{x:a.x,y:a.y},{x:mx,y:a.y},{x:mx,y:b.y},{x:b.x,y:b.y}];
-  }
-
-  function pathPoint(pts, t) {
-    const lens=[]; let total=0;
-    for(let i=0;i<pts.length-1;i++){
-      const d=Math.hypot(pts[i+1].x-pts[i].x,pts[i+1].y-pts[i].y);
-      lens.push(d); total+=d;
-    }
-    if(!total) return pts[0];
-    let rem=t*total;
-    for(let i=0;i<lens.length;i++){
-      if(rem<=lens[i]){
-        const f=rem/(lens[i]||1);
-        return {x:pts[i].x+(pts[i+1].x-pts[i].x)*f, y:pts[i].y+(pts[i+1].y-pts[i].y)*f};
-      }
-      rem-=lens[i];
-    }
+  function resize(){W=cv.width=window.innerWidth;H=cv.height=window.innerHeight;cancelAnimationFrame(raf);layout();tick();}
+  function path(a,b){const mx=a.x+(b.x-a.x)*.5;return[{x:a.x,y:a.y},{x:mx,y:a.y},{x:mx,y:b.y},{x:b.x,y:b.y}];}
+  function pt(pts,t){
+    const l=[];let tot=0;
+    for(let i=0;i<pts.length-1;i++){const d=Math.hypot(pts[i+1].x-pts[i].x,pts[i+1].y-pts[i].y);l.push(d);tot+=d;}
+    if(!tot)return pts[0];let r=t*tot;
+    for(let i=0;i<l.length;i++){if(r<=l[i]){const f=r/(l[i]||1);return{x:pts[i].x+(pts[i+1].x-pts[i].x)*f,y:pts[i].y+(pts[i+1].y-pts[i].y)*f};}r-=l[i];}
     return pts[pts.length-1];
   }
-
-  function spawnSignal(conn, startT=0) {
-    const p=PALETTE[Math.floor(Math.random()*PALETTE.length)];
-    signals.push({conn, t:startT, speed:0.0015+Math.random()*0.0018, pal:p, trail:[], r:3.5+Math.random()*1.5});
-  }
-
-  function drawNode(n) {
-    const a=Math.min(n.alpha,1);
-    const [r,g,b]=n.rgb;
+  function spawn(c,t=0){const p=PAL[Math.floor(Math.random()*PAL.length)];signals.push({c,t,spd:.0015+Math.random()*.0018,p,trail:[],r:3.5+Math.random()*1.5});}
+  function drawNode(n){
+    const a=Math.min(n.alpha,1),[r,g,b]=n.rgb;
     ctx.save();
-    if(n.pulse>0){
-      const pr=n.pulse*30;
-      ctx.beginPath(); ctx.arc(n.x,n.y,pr,0,Math.PI*2);
-      ctx.strokeStyle=`rgba(${r},${g},${b},${(1-n.pulse)*0.55})`;
-      ctx.lineWidth=1.8; ctx.stroke();
-      n.pulse=Math.max(0,n.pulse-0.02);
-    }
+    if(n.pulse>0){const pr=n.pulse*30;ctx.beginPath();ctx.arc(n.x,n.y,pr,0,Math.PI*2);ctx.strokeStyle=`rgba(${r},${g},${b},${(1-n.pulse)*.55})`;ctx.lineWidth=1.8;ctx.stroke();n.pulse=Math.max(0,n.pulse-.02);}
     ctx.globalAlpha=a;
-    const halo=ctx.createRadialGradient(n.x,n.y,0,n.x,n.y,32);
-    halo.addColorStop(0,`rgba(${r},${g},${b},0.16)`);
-    halo.addColorStop(0.5,`rgba(${r},${g},${b},0.06)`);
-    halo.addColorStop(1,`rgba(${r},${g},${b},0)`);
-    ctx.beginPath(); ctx.arc(n.x,n.y,32,0,Math.PI*2); ctx.fillStyle=halo; ctx.fill();
-    ctx.beginPath(); ctx.arc(n.x,n.y,14,0,Math.PI*2);
-    ctx.strokeStyle=`rgba(${r},${g},${b},0.42)`; ctx.lineWidth=1.4; ctx.stroke();
-    ctx.beginPath(); ctx.arc(n.x,n.y,8,0,Math.PI*2);
-    ctx.strokeStyle=`rgba(${r},${g},${b},0.6)`; ctx.lineWidth=1; ctx.stroke();
-    ctx.beginPath(); ctx.arc(n.x,n.y,4,0,Math.PI*2);
-    ctx.fillStyle=`rgba(${r},${g},${b},0.80)`; ctx.fill();
+    const h=ctx.createRadialGradient(n.x,n.y,0,n.x,n.y,32);
+    h.addColorStop(0,`rgba(${r},${g},${b},.16)`);h.addColorStop(.5,`rgba(${r},${g},${b},.06)`);h.addColorStop(1,`rgba(${r},${g},${b},0)`);
+    ctx.beginPath();ctx.arc(n.x,n.y,32,0,Math.PI*2);ctx.fillStyle=h;ctx.fill();
+    ctx.beginPath();ctx.arc(n.x,n.y,14,0,Math.PI*2);ctx.strokeStyle=`rgba(${r},${g},${b},.42)`;ctx.lineWidth=1.4;ctx.stroke();
+    ctx.beginPath();ctx.arc(n.x,n.y,8,0,Math.PI*2);ctx.strokeStyle=`rgba(${r},${g},${b},.6)`;ctx.lineWidth=1;ctx.stroke();
+    ctx.beginPath();ctx.arc(n.x,n.y,4,0,Math.PI*2);ctx.fillStyle=`rgba(${r},${g},${b},.80)`;ctx.fill();
     ctx.restore();
   }
-
-  function drawPipe(conn) {
-    const pts=getPath(conn.a,conn.b);
-    ctx.save();
-    ctx.beginPath();
-    ctx.moveTo(pts[0].x,pts[0].y);
-    for(let i=1;i<pts.length;i++) ctx.lineTo(pts[i].x,pts[i].y);
-    ctx.strokeStyle='rgba(26,75,140,0.22)';
-    ctx.lineWidth=1.1; ctx.setLineDash([5,10]); ctx.stroke(); ctx.setLineDash([]);
-    ctx.restore();
+  function drawPipe(c){
+    const pts=path(c.a,c.b);ctx.save();ctx.beginPath();ctx.moveTo(pts[0].x,pts[0].y);
+    for(let i=1;i<pts.length;i++)ctx.lineTo(pts[i].x,pts[i].y);
+    ctx.strokeStyle='rgba(26,75,140,.22)';ctx.lineWidth=1.1;ctx.setLineDash([5,10]);ctx.stroke();ctx.setLineDash([]);ctx.restore();
   }
-
-  function drawSignal(sig) {
-    const pts=getPath(sig.conn.a,sig.conn.b);
-    const pos=pathPoint(pts,sig.t);
-    const [r,g,b]=sig.pal.rgb;
-    sig.trail.push({x:pos.x,y:pos.y});
-    if(sig.trail.length>26) sig.trail.shift();
-    for(let i=0;i<sig.trail.length;i++){
-      const f=i/sig.trail.length;
-      const a=f*f*0.55, rad=sig.r*(0.25+f*0.55);
-      ctx.beginPath(); ctx.arc(sig.trail[i].x,sig.trail[i].y,rad,0,Math.PI*2);
-      ctx.fillStyle=`rgba(${r},${g},${b},${a})`; ctx.fill();
-    }
-    const glow=ctx.createRadialGradient(pos.x,pos.y,0,pos.x,pos.y,sig.r*6);
-    glow.addColorStop(0,`rgba(${r},${g},${b},0.7)`);
-    glow.addColorStop(0.3,`rgba(${r},${g},${b},0.18)`);
-    glow.addColorStop(1,`rgba(${r},${g},${b},0)`);
-    ctx.beginPath(); ctx.arc(pos.x,pos.y,sig.r*6,0,Math.PI*2); ctx.fillStyle=glow; ctx.fill();
-    ctx.beginPath(); ctx.arc(pos.x,pos.y,sig.r*0.75,0,Math.PI*2);
-    ctx.fillStyle=sig.pal.bright; ctx.globalAlpha=0.92; ctx.fill(); ctx.globalAlpha=1;
+  function drawSig(s){
+    const pts=path(s.c.a,s.c.b),pos=pt(pts,s.t),[r,g,b]=s.p.rgb;
+    s.trail.push({x:pos.x,y:pos.y});if(s.trail.length>26)s.trail.shift();
+    for(let i=0;i<s.trail.length;i++){const f=i/s.trail.length,a=f*f*.55,rad=s.r*(.25+f*.55);ctx.beginPath();ctx.arc(s.trail[i].x,s.trail[i].y,rad,0,Math.PI*2);ctx.fillStyle=`rgba(${r},${g},${b},${a})`;ctx.fill();}
+    const g2=ctx.createRadialGradient(pos.x,pos.y,0,pos.x,pos.y,s.r*6);
+    g2.addColorStop(0,`rgba(${r},${g},${b},.7)`);g2.addColorStop(.3,`rgba(${r},${g},${b},.18)`);g2.addColorStop(1,`rgba(${r},${g},${b},0)`);
+    ctx.beginPath();ctx.arc(pos.x,pos.y,s.r*6,0,Math.PI*2);ctx.fillStyle=g2;ctx.fill();
+    ctx.beginPath();ctx.arc(pos.x,pos.y,s.r*.75,0,Math.PI*2);ctx.fillStyle=s.p.bright;ctx.globalAlpha=.92;ctx.fill();ctx.globalAlpha=1;
   }
-
-  function tick() {
+  function tick(){
     ctx.clearRect(0,0,W,H);
-    nodes.forEach(n=>{ if(n.alpha<1) n.alpha+=0.008; });
+    nodes.forEach(n=>{if(n.alpha<1)n.alpha+=.008;});
     conns.forEach(drawPipe);
-    signals=signals.filter(sig=>{
-      sig.t+=sig.speed;
-      if(sig.t>=1){
-        sig.conn.b.pulse=1;
-        spawnSignal(conns[Math.floor(Math.random()*conns.length)],0);
-        return false;
-      }
-      drawSignal(sig); return true;
-    });
+    signals=signals.filter(s=>{s.t+=s.spd;if(s.t>=1){s.c.b.pulse=1;spawn(conns[Math.floor(Math.random()*conns.length)]);return false;}drawSig(s);return true;});
     nodes.forEach(drawNode);
     raf=requestAnimationFrame(tick);
   }
-
-  setInterval(()=>{ if(signals.length<MAX_SIGNALS && conns.length) spawnSignal(conns[Math.floor(Math.random()*conns.length)],0); },2200);
-  window.addEventListener('resize',resize);
-  resize();
+  setInterval(()=>{if(signals.length<4&&conns.length)spawn(conns[Math.floor(Math.random()*conns.length)]);},2200);
+  window.addEventListener('resize',resize);resize();
 })();
 
 /* ══ PLATFORM CANVAS ══ */
 (function(){
-  const cv=document.getElementById('pcanvas'), ctx=cv.getContext('2d');
-  let W,H,pts=[];
-  function init(){ W=cv.width=cv.offsetWidth; H=cv.height=cv.offsetHeight; pts=[];
-    for(let i=0;i<28;i++) pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.32,vy:(Math.random()-.5)*.32}); }
-  function draw(){ ctx.clearRect(0,0,W,H);
-    pts.forEach(p=>{p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;});
-    for(let i=0;i<pts.length;i++) for(let j=i+1;j<pts.length;j++){
-      const d=Math.hypot(pts[i].x-pts[j].x,pts[i].y-pts[j].y);
-      if(d<165){ctx.beginPath();ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);ctx.strokeStyle=`rgba(200,218,238,${.06*(1-d/165)})`;ctx.lineWidth=.7;ctx.stroke();}
-    }
-    pts.forEach(p=>{ctx.beginPath();ctx.arc(p.x,p.y,1.4,0,Math.PI*2);ctx.fillStyle='rgba(200,218,238,0.18)';ctx.fill();});
-    requestAnimationFrame(draw); }
-  new ResizeObserver(init).observe(cv.parentElement); init(); draw();
+  const cv=document.getElementById('pcanvas'),ctx=cv.getContext('2d');let W,H,pts=[];
+  function init(){W=cv.width=cv.offsetWidth;H=cv.height=cv.offsetHeight;pts=[];for(let i=0;i<28;i++)pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.32,vy:(Math.random()-.5)*.32});}
+  function draw(){ctx.clearRect(0,0,W,H);pts.forEach(p=>{p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;});
+    for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){const d=Math.hypot(pts[i].x-pts[j].x,pts[i].y-pts[j].y);if(d<165){ctx.beginPath();ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);ctx.strokeStyle=`rgba(200,218,238,${.06*(1-d/165)})`;ctx.lineWidth=.7;ctx.stroke();}}
+    pts.forEach(p=>{ctx.beginPath();ctx.arc(p.x,p.y,1.4,0,Math.PI*2);ctx.fillStyle='rgba(200,218,238,.18)';ctx.fill();});requestAnimationFrame(draw);}
+  new ResizeObserver(init).observe(cv.parentElement);init();draw();
 })();
 
 /* ══ MARKET CANVAS ══ */
 (function(){
-  const cv=document.getElementById('mcanvas'), ctx=cv.getContext('2d');
-  let W,H,t=0;
-  const segs=[
-    {lbl:'Comm. Property',r:.61,col:'#1a4b8c',a:0},
-    {lbl:'MGA Programs',r:.57,col:'#c07d2a',a:1.05},
-    {lbl:'E&S Lines',r:.53,col:'#2563b8',a:2.10},
-    {lbl:'Construction',r:.51,col:'#1a8c7a',a:3.14},
-    {lbl:'Tech E&O',r:.47,col:'#4a6a8a',a:4.19},
-    {lbl:'Environmental',r:.43,col:'#6a8aaa',a:5.24},
-    {lbl:'Inland Marine',r:.39,col:'#8faab8',a:0.52},
-  ];
+  const cv=document.getElementById('mcanvas'),ctx=cv.getContext('2d');let W,H,t=0;
+  const S=[{l:'Comm. Property',r:.61,c:'#1a4b8c',a:0},{l:'MGA Programs',r:.57,c:'#c07d2a',a:1.05},{l:'E&S Lines',r:.53,c:'#2563b8',a:2.10},{l:'Construction',r:.51,c:'#1a8c7a',a:3.14},{l:'Tech E&O',r:.47,c:'#4a6a8a',a:4.19},{l:'Environmental',r:.43,c:'#6a8aaa',a:5.24},{l:'Inland Marine',r:.39,c:'#8faab8',a:0.52}];
   function init(){W=cv.width=cv.offsetWidth;H=cv.height=cv.offsetHeight;}
-  function draw(){
-    ctx.clearRect(0,0,W,H); t+=.004;
-    const cx=W/2,cy=H/2,mr=Math.min(W,H)*.40;
-    [.5,.7,.9].forEach(s=>{ctx.beginPath();ctx.arc(cx,cy,mr*s,0,Math.PI*2);ctx.strokeStyle='rgba(26,75,140,0.07)';ctx.lineWidth=.8;ctx.stroke();});
-    const cg=ctx.createRadialGradient(cx,cy,0,cx,cy,24);
-    cg.addColorStop(0,'rgba(26,75,140,0.22)');cg.addColorStop(1,'rgba(26,75,140,0)');
+  function draw(){ctx.clearRect(0,0,W,H);t+=.004;const cx=W/2,cy=H/2,mr=Math.min(W,H)*.40;
+    [.5,.7,.9].forEach(s=>{ctx.beginPath();ctx.arc(cx,cy,mr*s,0,Math.PI*2);ctx.strokeStyle='rgba(26,75,140,.07)';ctx.lineWidth=.8;ctx.stroke();});
+    const cg=ctx.createRadialGradient(cx,cy,0,cx,cy,24);cg.addColorStop(0,'rgba(26,75,140,.22)');cg.addColorStop(1,'rgba(26,75,140,0)');
     ctx.beginPath();ctx.arc(cx,cy,24,0,Math.PI*2);ctx.fillStyle=cg;ctx.fill();
     ctx.beginPath();ctx.arc(cx,cy,7,0,Math.PI*2);ctx.fillStyle='#1a4b8c';ctx.fill();
-    ctx.beginPath();ctx.arc(cx,cy,12,0,Math.PI*2);ctx.strokeStyle='rgba(26,75,140,0.28)';ctx.lineWidth=1;ctx.stroke();
-    segs.forEach((s,i)=>{
-      const ang=s.a+t*(i%2===0?.16:-.12);
-      const nx=cx+Math.cos(ang)*mr*s.r, ny=cy+Math.sin(ang)*mr*s.r;
-      ctx.beginPath();ctx.moveTo(cx,cy);ctx.lineTo(nx,ny);ctx.strokeStyle=s.col+'30';ctx.lineWidth=.8;ctx.stroke();
-      const nr=16+i*2;
-      const ng=ctx.createRadialGradient(nx,ny,0,nx,ny,nr*2.2);
-      ng.addColorStop(0,s.col+'55');ng.addColorStop(1,s.col+'00');
+    ctx.beginPath();ctx.arc(cx,cy,12,0,Math.PI*2);ctx.strokeStyle='rgba(26,75,140,.28)';ctx.lineWidth=1;ctx.stroke();
+    S.forEach((s,i)=>{const ang=s.a+t*(i%2===0?.16:-.12),nx=cx+Math.cos(ang)*mr*s.r,ny=cy+Math.sin(ang)*mr*s.r;
+      ctx.beginPath();ctx.moveTo(cx,cy);ctx.lineTo(nx,ny);ctx.strokeStyle=s.c+'30';ctx.lineWidth=.8;ctx.stroke();
+      const nr=16+i*2,ng=ctx.createRadialGradient(nx,ny,0,nx,ny,nr*2.2);ng.addColorStop(0,s.c+'55');ng.addColorStop(1,s.c+'00');
       ctx.beginPath();ctx.arc(nx,ny,nr*2.2,0,Math.PI*2);ctx.fillStyle=ng;ctx.fill();
-      ctx.beginPath();ctx.arc(nx,ny,nr*.5,0,Math.PI*2);ctx.fillStyle=s.col+'cc';ctx.fill();
+      ctx.beginPath();ctx.arc(nx,ny,nr*.5,0,Math.PI*2);ctx.fillStyle=s.c+'cc';ctx.fill();
       const lx=cx+Math.cos(ang)*(mr*s.r+nr*.5+18),ly=cy+Math.sin(ang)*(mr*s.r+nr*.5+18);
-      ctx.font='500 10px Geist,sans-serif';ctx.fillStyle='#4a6a8a';
-      ctx.textAlign=lx>cx?'left':'right';ctx.textBaseline='middle';ctx.fillText(s.lbl,lx,ly);
-    });
-    requestAnimationFrame(draw);
-  }
-  new ResizeObserver(init).observe(cv.parentElement); init(); draw();
+      ctx.font='500 10px Geist,sans-serif';ctx.fillStyle='#4a6a8a';ctx.textAlign=lx>cx?'left':'right';ctx.textBaseline='middle';ctx.fillText(s.l,lx,ly);});
+    requestAnimationFrame(draw);}
+  new ResizeObserver(init).observe(cv.parentElement);init();draw();
 })();
 
 /* ══ CTA CANVAS ══ */
 (function(){
-  const cv=document.getElementById('ccanvas'), ctx=cv.getContext('2d');
-  let W,H,pts=[];
-  function init(){W=cv.width=cv.offsetWidth;H=cv.height=cv.offsetHeight;pts=[];
-    for(let i=0;i<42;i++) pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.42,vy:(Math.random()-.5)*.42});}
-  function draw(){ctx.clearRect(0,0,W,H);
-    pts.forEach(p=>{p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;});
-    for(let i=0;i<pts.length;i++) for(let j=i+1;j<pts.length;j++){
-      const d=Math.hypot(pts[i].x-pts[j].x,pts[i].y-pts[j].y);
-      if(d<130){ctx.beginPath();ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);ctx.strokeStyle=`rgba(192,125,42,${.09*(1-d/130)})`;ctx.lineWidth=.6;ctx.stroke();}
-    }
-    pts.forEach(p=>{ctx.beginPath();ctx.arc(p.x,p.y,1.2,0,Math.PI*2);ctx.fillStyle='rgba(192,125,42,0.18)';ctx.fill();});
-    requestAnimationFrame(draw);}
-  new ResizeObserver(init).observe(cv.parentElement); init(); draw();
+  const cv=document.getElementById('ccanvas'),ctx=cv.getContext('2d');let W,H,pts=[];
+  function init(){W=cv.width=cv.offsetWidth;H=cv.height=cv.offsetHeight;pts=[];for(let i=0;i<42;i++)pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.42,vy:(Math.random()-.5)*.42});}
+  function draw(){ctx.clearRect(0,0,W,H);pts.forEach(p=>{p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;});
+    for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){const d=Math.hypot(pts[i].x-pts[j].x,pts[i].y-pts[j].y);if(d<130){ctx.beginPath();ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);ctx.strokeStyle=`rgba(192,125,42,${.09*(1-d/130)})`;ctx.lineWidth=.6;ctx.stroke();}}
+    pts.forEach(p=>{ctx.beginPath();ctx.arc(p.x,p.y,1.2,0,Math.PI*2);ctx.fillStyle='rgba(192,125,42,.18)';ctx.fill();});requestAnimationFrame(draw);}
+  new ResizeObserver(init).observe(cv.parentElement);init();draw();
 })();
 
 /* ══ SCROLL REVEAL ══ */
-const ro = new IntersectionObserver(es => es.forEach(e => {
-  if(e.isIntersecting){ e.target.classList.add('on'); ro.unobserve(e.target); }
-}), {threshold:.1});
-document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+const ro=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');ro.unobserve(e.target);}}),{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
 
-/* ══ CTA MODAL ══ */
+/* ══ MODAL ══ */
 (function(){
-  const modal      = document.getElementById('modal');
-  const closeBtn   = document.getElementById('modal-close');
-  const submitBtn  = document.getElementById('cta-submit');
-  const emailInput = document.getElementById('cta-email');
-  const emailLink  = document.getElementById('modal-email-link');
-  const copyBtn    = document.getElementById('modal-copy');
+  const modal=document.getElementById('modal');
+  const closeBtn=document.getElementById('modal-close');
+  const submitBtn=document.getElementById('cta-submit');
+  const emailInput=document.getElementById('cta-email');
+  const emailLink=document.getElementById('modal-email-link');
+  const copyBtn=document.getElementById('modal-copy');
 
-  submitBtn.addEventListener('click', function(){
-    const val = emailInput.value.trim();
-    const body = val
-      ? 'Hi,\n\nI would like to request the Signal Insurance investor deck.\n\nPlease reply to: ' + val + '\n\nThank you.'
-      : 'Hi,\n\nI would like to request the Signal Insurance investor deck.\n\nThank you.';
-    emailLink.href = 'mailto:hello@signalinsurancegroup.com?subject=Investor%20Deck%20Request&body=' + encodeURIComponent(body);
+  submitBtn.addEventListener('click',function(){
+    const val=emailInput.value.trim();
+    const body=val
+      ?'Hi,\n\nI would like to request the Signal Insurance investor deck.\n\nPlease reply to: '+val+'\n\nThank you.'
+      :'Hi,\n\nI would like to request the Signal Insurance investor deck.\n\nThank you.';
+    emailLink.href='mailto:hello@signalinsurancegroup.com?subject=Investor%20Deck%20Request&body='+encodeURIComponent(body);
     modal.classList.add('open');
   });
 
-  closeBtn.addEventListener('click', function(){ modal.classList.remove('open'); });
-  modal.addEventListener('click', function(e){ if(e.target===modal) modal.classList.remove('open'); });
+  closeBtn.addEventListener('click',function(){modal.classList.remove('open');});
+  modal.addEventListener('click',function(e){if(e.target===modal)modal.classList.remove('open');});
 
-  copyBtn.addEventListener('click', function(){
-    navig
+  copyBtn.addEventListener('click',function(){
+    navigator.clipboard.writeText('hello@signalinsurancegroup.com').then(function(){
+      copyBtn.textContent='Copied ✓';
+      setTimeout(function(){copyBtn.textContent='Copy Address';},2000);
+    }).catch(function(){copyBtn.textContent='hello@signalinsurancegroup.com';});
+  });
+})();
+</script>
+</body>
+</html>

@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Signal Insurance Group — Where Underwriting Meets Technology</title>
+<title>Signal Insurance — Tech-Enabled P&C Specialty Carrier</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Geist+Mono:wght@300;400;500&family=Geist:wght@300;400;500;600&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Geist+Mono:wght@300;400;500&family=Geist:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -26,19 +26,12 @@
 html { scroll-behavior: smooth; }
 body { background: var(--bg); color: var(--ink); font-family: 'Geist', sans-serif; overflow-x: hidden; }
 
-/* ─── Fixed background canvas ─── */
-#bg {
-  position: fixed; inset: 0;
-  width: 100%; height: 100%;
-  z-index: 0; pointer-events: none;
-}
+/* ── Background canvas ── */
+#bg { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
 
-/* ─── Page content sits above canvas ─── */
 .page { position: relative; z-index: 1; }
 
-/* ══════════════════════════════════════
-   NAV
-══════════════════════════════════════ */
+/* ══ NAV ══ */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 200;
   display: flex; align-items: center; justify-content: space-between;
@@ -47,52 +40,36 @@ nav {
   backdrop-filter: blur(24px);
   border-bottom: 1px solid var(--rule);
 }
-
-.logo { text-decoration: none; display: flex; flex-direction: column; line-height: 1; }
-.logo-r1 { display: flex; align-items: center; }
-.logo-dot  { font-family: 'Montserrat', sans-serif; font-size: 20px; font-weight: 900; color: var(--gold); line-height: 1; margin-right: 2px; }
-.logo-name { font-family: 'Montserrat', sans-serif; font-size: 17px; font-weight: 800; letter-spacing: 0.11em; color: var(--blue); line-height: 1; }
-.logo-r2   { margin-top: 4px; padding-top: 4px; border-top: 1.5px solid rgba(26,75,140,0.18); }
-.logo-sub  { font-family: 'Montserrat', sans-serif; font-size: 7.5px; font-weight: 500; letter-spacing: 0.3em; color: var(--mid); text-transform: uppercase; }
-.logo-r3   { margin-top: 3px; }
-.logo-tech { font-family: 'Geist Mono', monospace; font-size: 7px; font-weight: 300; letter-spacing: 0.18em; color: var(--light); text-transform: uppercase; }
-
+.logo { text-decoration: none; display: flex; align-items: center; line-height: 1; gap: 0; }
+.logo-dot  { font-family: 'Montserrat', sans-serif; font-size: 22px; font-weight: 900; color: var(--gold); line-height: 1; margin-right: 2px; }
+.logo-name { font-family: 'Montserrat', sans-serif; font-size: 16px; font-weight: 900; letter-spacing: 0.12em; color: var(--blue); line-height: 1; }
+.logo-sub  { font-family: 'Montserrat', sans-serif; font-size: 16px; font-weight: 300; letter-spacing: 0.04em; color: var(--blue); opacity: 0.72; line-height: 1; margin-left: 7px; }
 .nav-links { display: flex; align-items: center; gap: 32px; }
-.nav-link { font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mid); text-decoration: none; transition: color .2s; }
+.nav-link  { font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mid); text-decoration: none; transition: color .2s; }
 .nav-link:hover { color: var(--blue); }
-.nav-btn { background: var(--blue); color: #fff; border: none; padding: 10px 22px; font-family: 'Montserrat', sans-serif; font-size: 10.5px; font-weight: 600; letter-spacing: 0.08em; text-decoration: none; cursor: pointer; transition: background .2s; display: inline-block; }
+.nav-btn   { background: var(--blue); color: #fff; border: none; padding: 10px 22px; font-family: 'Montserrat', sans-serif; font-size: 10.5px; font-weight: 600; letter-spacing: 0.08em; text-decoration: none; cursor: pointer; transition: background .2s; display: inline-block; }
 .nav-btn:hover { background: var(--blue2); }
 
-/* ══════════════════════════════════════
-   HERO
-══════════════════════════════════════ */
+/* ══ HERO ══ */
 .hero {
   min-height: 100vh;
   display: grid; grid-template-columns: 1fr 380px;
   align-items: center;
-  padding: 120px 52px 80px;
-  gap: 48px;
+  padding: 120px 52px 80px; gap: 48px;
 }
-
-/* Frosted reading surface for hero text */
-.hero-text {
-  position: relative;
-  padding: 56px 60px 56px 0;
-}
+.hero-text { position: relative; padding: 56px 60px 56px 0; }
 .hero-text::before {
   content: '';
-  position: absolute;
-  inset: -24px -44px -24px -64px;
+  position: absolute; inset: -24px -44px -24px -64px;
   background: rgba(237,242,247,0.52);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   z-index: -1;
 }
-
 .hero-badge {
   display: inline-flex; align-items: center; gap: 10px;
   background: #fff; border: 1px solid rgba(26,75,140,0.18);
-  padding: 7px 16px; margin-bottom: 40px;
+  padding: 7px 16px; margin-bottom: 20px;
   opacity: 0; animation: fadeUp .7s ease forwards .3s;
 }
 .badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--teal); box-shadow: 0 0 0 3px rgba(26,140,122,.2); animation: pulse 2.2s ease infinite; }
@@ -107,45 +84,38 @@ nav {
 .hero-positioning::before,
 .hero-positioning::after {
   content: ''; display: block;
-  flex: 1; max-width: 36px; height: 1.5px; background: var(--gold);
-  opacity: 0.7;
+  flex: 1; max-width: 36px; height: 1.5px; background: var(--gold); opacity: 0.7;
 }
 .hero-pos-text {
   font-family: 'Montserrat', sans-serif;
   font-size: 12px; font-weight: 800;
   letter-spacing: 0.28em; text-transform: uppercase;
-  color: var(--gold);
-  white-space: nowrap;
+  color: var(--gold); white-space: nowrap;
 }
-
 .hero-h1 {
   font-family: 'Fraunces', serif;
   font-size: clamp(46px, 6vw, 88px);
   font-weight: 300; line-height: 1.04; color: var(--ink);
-  margin-bottom: 28px; text-shadow: 0 1px 12px rgba(237,242,247,0.6);
+  margin-bottom: 28px;
+  text-shadow: 0 1px 12px rgba(237,242,247,0.6);
   opacity: 0; animation: fadeUp .9s ease forwards .5s;
 }
-.hero-h1 em  { font-style: italic; color: var(--blue); }
-.hero-h1 .g  { font-style: italic; color: var(--gold); }
-
+.hero-h1 em { font-style: italic; color: var(--blue); }
+.hero-h1 .g { font-style: italic; color: var(--gold); }
 .hero-sub {
   font-size: 16px; font-weight: 300; line-height: 1.8; color: var(--mid);
   max-width: 500px; margin-bottom: 48px;
   text-shadow: 0 1px 8px rgba(237,242,247,0.7);
   opacity: 0; animation: fadeUp .9s ease forwards .7s;
 }
-
-.hero-btns {
-  display: flex; align-items: center; gap: 28px;
-  opacity: 0; animation: fadeUp .9s ease forwards .9s;
-}
-.btn-primary { background: var(--blue); color: #fff; border: none; padding: 16px 36px; font-family: 'Montserrat', sans-serif; font-size: 11.5px; font-weight: 600; letter-spacing: .08em; text-decoration: none; display: inline-block; transition: background .2s, transform .15s; }
+.hero-btns { display: flex; align-items: center; gap: 28px; opacity: 0; animation: fadeUp .9s ease forwards .9s; }
+.btn-primary   { background: var(--blue); color: #fff; border: none; padding: 16px 36px; font-family: 'Montserrat', sans-serif; font-size: 11.5px; font-weight: 600; letter-spacing: .08em; text-decoration: none; display: inline-block; transition: background .2s, transform .15s; }
 .btn-primary:hover { background: var(--blue2); transform: translateY(-1px); }
 .btn-secondary { font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: var(--mid); text-decoration: none; display: flex; align-items: center; gap: 7px; transition: color .2s; }
 .btn-secondary::after { content: '→'; font-size: 13px; }
 .btn-secondary:hover { color: var(--blue); }
 
-/* Hero right — API cards */
+/* Hero cards */
 .hero-cards { display: flex; flex-direction: column; gap: 10px; opacity: 0; animation: fadeIn 1.2s ease forwards 1.3s; }
 .hcard { background: #fff; border: 1px solid rgba(26,75,140,0.14); box-shadow: 0 4px 24px rgba(13,25,41,.09); padding: 14px 18px; display: flex; align-items: center; gap: 14px; position: relative; overflow: hidden; }
 .hcard::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; }
@@ -160,50 +130,31 @@ nav {
 .hcard.c4 .hcard-ico { background: rgba(74,106,138,.09); }
 .hcard-lbl { font-family: 'Geist Mono', monospace; font-size: 8.5px; letter-spacing: .16em; text-transform: uppercase; color: var(--light); margin-bottom: 3px; }
 .hcard-val { font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 600; color: var(--ink); }
-.hcard-tag { margin-left: auto; font-family: 'Geist Mono', monospace; font-size: 8.5px; letter-spacing: .1em; background: rgba(26,75,140,.07); color: rgba(26,75,140,.55); padding: 3px 8px; flex-shrink: 0; }
 
-/* ══════════════════════════════════════
-   STATS STRIP
-══════════════════════════════════════ */
-.strip {
-  display: grid; grid-template-columns: repeat(4,1fr);
-  background: rgba(255,255,255,0.97);
-  border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
-}
+/* ══ STATS STRIP ══ */
+.strip { display: grid; grid-template-columns: repeat(4,1fr); background: rgba(255,255,255,0.97); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
 .strip-cell { padding: 42px 44px; border-right: 1px solid var(--rule); }
 .strip-cell:last-child { border-right: none; }
 .strip-n { font-family: 'Fraunces', serif; font-size: 48px; font-weight: 300; color: var(--ink); line-height: 1; margin-bottom: 8px; }
 .strip-n sup { font-size: 22px; color: var(--blue); vertical-align: super; }
 .strip-l { font-family: 'Geist Mono', monospace; font-size: 9.5px; letter-spacing: .17em; text-transform: uppercase; color: var(--mid); line-height: 1.55; }
 
-/* ══════════════════════════════════════
-   SHARED SECTION ELEMENTS
-══════════════════════════════════════ */
+/* ══ SHARED ══ */
 .stag { font-family: 'Geist Mono', monospace; font-size: 9.5px; letter-spacing: .24em; text-transform: uppercase; color: var(--blue); display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
 .stag::before { content: ''; width: 22px; height: 1px; background: var(--blue); flex-shrink: 0; }
 .stitle { font-family: 'Fraunces', serif; font-size: clamp(30px,3.5vw,50px); font-weight: 300; line-height: 1.15; color: var(--ink); }
 .stitle em { font-style: italic; color: var(--blue); }
 
-/* ══════════════════════════════════════
-   THESIS
-══════════════════════════════════════ */
-.thesis {
-  display: grid; grid-template-columns: 340px 1fr;
-  gap: 80px; align-items: start;
-  padding: 110px 52px;
-  background: rgba(237,242,247,0.95);
-  backdrop-filter: blur(28px);
-}
+/* ══ THESIS ══ */
+.thesis { display: grid; grid-template-columns: 340px 1fr; gap: 80px; align-items: start; padding: 110px 52px; background: rgba(237,242,247,0.95); backdrop-filter: blur(28px); }
 .thesis-sticky { position: sticky; top: 100px; }
 .trow { padding: 42px 0; border-bottom: 1px solid var(--rule); display: grid; grid-template-columns: 36px 1fr; gap: 26px; align-items: start; }
 .trow:first-child { border-top: 1px solid var(--rule); }
-.tnum { font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: .1em; color: var(--light); padding-top: 4px; }
+.tnum  { font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: .1em; color: var(--light); padding-top: 4px; }
 .ttitle { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 400; color: var(--ink); margin-bottom: 11px; }
-.tbody { font-size: 14px; line-height: 1.85; color: var(--mid); font-weight: 300; }
+.tbody  { font-size: 14px; line-height: 1.85; color: var(--mid); font-weight: 300; }
 
-/* ══════════════════════════════════════
-   PLATFORM (dark section)
-══════════════════════════════════════ */
+/* ══ PLATFORM ══ */
 .platform { background: var(--ink); padding: 110px 52px; position: relative; overflow: hidden; }
 #pcanvas { position: absolute; inset: 0; width: 100%; height: 100%; opacity: .38; }
 .plat-inner { position: relative; z-index: 1; }
@@ -217,21 +168,13 @@ nav {
 .pcard::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: var(--gold); transform: scaleX(0); transition: transform .35s ease; transform-origin: left; }
 .pcard:hover { background: rgba(255,255,255,.07); border-color: rgba(255,255,255,.15); }
 .pcard:hover::after { transform: scaleX(1); }
-.pcard-icon { width: 38px; height: 38px; margin-bottom: 22px; }
+.pcard-icon  { width: 38px; height: 38px; margin-bottom: 22px; }
 .pcard-title { font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 700; color: #e8f0f8; margin-bottom: 10px; }
 .pcard-text  { font-size: 13px; line-height: 1.75; color: rgba(200,218,238,.52); font-weight: 300; }
 .pcard-tag   { margin-top: 18px; font-family: 'Geist Mono', monospace; font-size: 9px; letter-spacing: .15em; text-transform: uppercase; color: var(--gold); }
 
-/* ══════════════════════════════════════
-   MARKET
-══════════════════════════════════════ */
-.market {
-  padding: 110px 52px;
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 80px; align-items: center;
-  background: rgba(237,242,247,0.95);
-  backdrop-filter: blur(28px);
-}
+/* ══ MARKET ══ */
+.market { padding: 110px 52px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; background: rgba(237,242,247,0.95); backdrop-filter: blur(28px); }
 .market-sub { font-size: 15px; font-weight: 300; line-height: 1.8; color: var(--mid); margin: 22px 0 36px; }
 .seg-list { display: flex; flex-direction: column; gap: 2px; }
 .seg { display: flex; align-items: center; gap: 14px; background: #fff; border: 1px solid var(--rule); padding: 13px 18px; transition: background .2s; }
@@ -243,14 +186,8 @@ nav {
 .market-visual { height: 420px; position: relative; }
 #mcanvas { width: 100%; height: 100%; }
 
-/* ══════════════════════════════════════
-   TEAM
-══════════════════════════════════════ */
-.team {
-  padding: 110px 52px;
-  background: rgba(237,242,247,0.95);
-  backdrop-filter: blur(28px);
-}
+/* ══ TEAM ══ */
+.team { padding: 110px 52px; background: rgba(237,242,247,0.95); backdrop-filter: blur(28px); }
 .team-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; margin-top: 54px; }
 .tcard { background: #fff; border: 1px solid var(--rule); padding: 38px 34px; position: relative; overflow: hidden; transition: box-shadow .3s; }
 .tcard:hover { box-shadow: 0 8px 40px rgba(13,25,41,.08); }
@@ -263,14 +200,8 @@ nav {
 .tcard-bio  { font-size: 13.5px; line-height: 1.8; color: var(--mid); font-weight: 300; margin-bottom: 18px; }
 .tcard-prev { font-family: 'Geist Mono', monospace; font-size: 9.5px; letter-spacing: .1em; color: var(--light); }
 
-/* ══════════════════════════════════════
-   CTA
-══════════════════════════════════════ */
-.cta {
-  background: linear-gradient(155deg, #0d1929 0%, #0f2040 55%, #0a1f18 100%);
-  padding: 130px 52px; text-align: center;
-  position: relative; overflow: hidden;
-}
+/* ══ CTA ══ */
+.cta { background: linear-gradient(155deg, #0d1929 0%, #0f2040 55%, #0a1f18 100%); padding: 130px 52px; text-align: center; position: relative; overflow: hidden; }
 #ccanvas { position: absolute; inset: 0; width: 100%; height: 100%; opacity: .45; }
 .cta-inner { position: relative; z-index: 1; }
 .cta-tag { font-family: 'Geist Mono', monospace; font-size: 9.5px; letter-spacing: .28em; color: var(--gold2); text-transform: uppercase; display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 26px; }
@@ -286,34 +217,40 @@ nav {
 .cta-btn:hover { background: var(--gold2); }
 .cta-note { font-family: 'Geist Mono', monospace; font-size: 9.5px; letter-spacing: .1em; color: rgba(200,218,238,.62); text-transform: uppercase; }
 
-/* ══════════════════════════════════════
-   FOOTER
-══════════════════════════════════════ */
-footer {
-  background: var(--ink); padding: 44px 52px;
-  display: flex; align-items: center; justify-content: space-between;
-  border-top: 1px solid rgba(255,255,255,.1);
-}
-.fl-logo { display: flex; flex-direction: column; line-height: 1; }
-.fl-r1 { display: flex; align-items: center; }
-.fl-dot  { font-family: 'Montserrat', sans-serif; font-size: 18px; font-weight: 900; color: var(--gold); margin-right: 2px; line-height: 1; }
-.fl-name { font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 800; letter-spacing: .11em; color: rgba(215,230,248,.88); }
-.fl-r2 { margin-top: 4px; padding-top: 4px; border-top: 1px solid rgba(200,218,238,.18); }
-.fl-sub { font-family: 'Montserrat', sans-serif; font-size: 7.5px; font-weight: 500; letter-spacing: .3em; color: rgba(200,218,238,.45); text-transform: uppercase; }
-.fl-url { font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: .14em; color: rgba(200,218,238,.38); margin-top: 7px; }
+/* ══ MODAL ══ */
+.modal-overlay { display: none; position: fixed; inset: 0; z-index: 9999; background: rgba(13,25,41,0.82); backdrop-filter: blur(10px); align-items: center; justify-content: center; }
+.modal-overlay.open { display: flex; }
+.modal-box { background: #fff; max-width: 460px; width: 90%; padding: 44px 40px; position: relative; box-shadow: 0 32px 80px rgba(0,0,0,0.28); }
+.modal-close { position: absolute; top: 16px; right: 18px; background: none; border: none; font-size: 18px; cursor: pointer; color: var(--light); line-height: 1; transition: color .2s; }
+.modal-close:hover { color: var(--ink); }
+.modal-eyebrow { font-family: 'Geist Mono', monospace; font-size: 9px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+.modal-title { font-family: 'Fraunces', serif; font-size: 26px; font-weight: 300; color: var(--ink); margin-bottom: 10px; }
+.modal-body { font-family: 'Geist', sans-serif; font-size: 13.5px; color: var(--mid); line-height: 1.75; margin-bottom: 28px; }
+.modal-address-box { background: var(--bg); padding: 18px 20px; margin-bottom: 24px; border-left: 3px solid var(--blue); }
+.modal-address-label { font-family: 'Geist Mono', monospace; font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--light); margin-bottom: 6px; }
+.modal-address { font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 700; color: var(--blue); }
+.modal-actions { display: flex; gap: 10px; }
+.modal-open-email { flex: 1; background: var(--blue); color: #fff; padding: 14px 20px; font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-decoration: none; text-align: center; display: block; transition: background .2s; }
+.modal-open-email:hover { background: var(--blue2); }
+.modal-copy-btn { background: var(--bg); border: 1px solid var(--rule); color: var(--mid); padding: 14px 20px; font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; cursor: pointer; transition: background .2s, color .2s; white-space: nowrap; }
+.modal-copy-btn:hover { background: #fff; color: var(--ink); }
+
+/* ══ FOOTER ══ */
+footer { background: var(--ink); padding: 44px 52px; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(255,255,255,.1); }
+.fl-logo { display: flex; align-items: center; line-height: 1; gap: 0; }
+.fl-dot  { font-family: 'Montserrat', sans-serif; font-size: 20px; font-weight: 900; color: var(--gold); margin-right: 2px; line-height: 1; }
+.fl-name { font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 900; letter-spacing: .12em; color: rgba(215,230,248,.9); }
+.fl-sub  { font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 300; letter-spacing: .04em; color: rgba(215,230,248,.6); margin-left: 7px; }
+.fl-url  { font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: .14em; color: rgba(200,218,238,.38); margin-top: 7px; }
 .fl-legal { font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: .06em; color: rgba(200,218,238,.52); text-align: right; max-width: 400px; line-height: 1.8; }
 
-/* ══════════════════════════════════════
-   ANIMATIONS & SCROLL REVEAL
-══════════════════════════════════════ */
+/* ══ ANIMATIONS ══ */
 @keyframes fadeUp  { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
 @keyframes fadeIn  { from { opacity:0; } to { opacity:1; } }
 .reveal { opacity:0; transform:translateY(22px); transition: opacity .8s ease, transform .8s ease; }
 .reveal.on { opacity:1; transform:none; }
 
-/* ══════════════════════════════════════
-   RESPONSIVE
-══════════════════════════════════════ */
+/* ══ RESPONSIVE ══ */
 @media (max-width: 960px) {
   nav { padding: 18px 24px; }
   .nav-links .nav-link { display: none; }
@@ -334,6 +271,101 @@ footer {
   .cta-in { border-right: 1px solid rgba(200,218,238,.22); border-bottom: none; }
   footer { flex-direction: column; gap: 20px; align-items: flex-start; padding: 36px 24px; }
   .fl-legal { text-align: left; }
+  .modal-box { padding: 32px 24px; }
+}
+
+/* ══ MOBILE — iPhone optimised ══ */
+@media (max-width: 480px) {
+  nav { padding: 16px 20px; }
+  .logo-name { font-size: 15px; }
+  .logo-dot  { font-size: 17px; }
+
+  .hero {
+    min-height: 100svh;
+    padding: 96px 20px 52px;
+    align-items: flex-start;
+  }
+  .hero-text {
+    padding: 0;
+  }
+  .hero-text::before {
+    inset: -12px -24px -12px -24px;
+    background: rgba(237,242,247,0.72);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+
+  .hero-badge {
+    padding: 6px 12px;
+    margin-bottom: 16px;
+  }
+  .badge-text { font-size: 8.5px; letter-spacing: .14em; }
+
+  .hero-positioning { margin-bottom: 20px; gap: 10px; }
+  .hero-pos-text    { font-size: 9.5px; letter-spacing: 0.2em; }
+
+  .hero-h1 {
+    font-size: clamp(36px, 10vw, 52px);
+    margin-bottom: 20px;
+    line-height: 1.08;
+  }
+  .hero-sub {
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 36px;
+  }
+  .hero-btns {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .btn-primary {
+    width: 100%;
+    text-align: center;
+    padding: 15px 24px;
+    font-size: 11px;
+  }
+  .btn-secondary { font-size: 9.5px; }
+
+  .strip { grid-template-columns: repeat(2,1fr); }
+  .strip-cell { padding: 28px 20px; }
+  .strip-n { font-size: 36px; }
+  .strip-n sup { font-size: 17px; }
+  .strip-l { font-size: 8.5px; }
+
+  .thesis { padding: 60px 20px; gap: 28px; }
+  .ttitle { font-size: 19px; }
+  .tbody  { font-size: 13.5px; }
+
+  .platform { padding: 60px 20px; }
+  .plat-grid { grid-template-columns: 1fr; gap: 2px; }
+  .plat-sub { font-size: 14px; margin-bottom: 36px; }
+
+  .market  { padding: 60px 20px; }
+  .seg     { padding: 11px 14px; }
+  .seg-name { font-size: 11px; }
+  .seg-bar-bg { width: 48px; }
+  .seg-sz  { font-size: 9px; width: 40px; }
+
+  .team    { padding: 60px 20px; }
+  .tcard   { padding: 28px 22px; }
+  .tcard-name { font-size: 17px; }
+
+  .cta     { padding: 72px 20px; }
+  .cta-h2  { font-size: clamp(30px, 8vw, 48px); }
+  .cta-p   { font-size: 14px; }
+  .cta-in  { padding: 14px 16px; font-size: 13px; }
+  .cta-btn { padding: 14px 20px; font-size: 10.5px; }
+  .cta-note { font-size: 8.5px; }
+
+  footer   { padding: 32px 20px; }
+  .fl-name { font-size: 13px; }
+  .fl-legal { font-size: 9px; }
+
+  .modal-box { padding: 28px 20px; width: 94%; }
+  .modal-title { font-size: 22px; }
+  .modal-actions { flex-direction: column; }
+  .modal-address { font-size: 13px; word-break: break-all; }
 }
 </style>
 </head>
@@ -346,8 +378,7 @@ footer {
 <!-- NAV -->
 <nav>
   <a href="#" class="logo">
-    <div class="logo-r1"><span class="logo-dot">·</span><span class="logo-name">SIGNAL</span></div>
-    <div class="logo-r2"><span class="logo-sub">Insurance Group</span></div>
+    <span class="logo-dot">·</span><span class="logo-name">SIGNAL</span><span class="logo-sub">Insurance</span>
   </a>
   <div class="nav-links">
     <a href="#thesis"   class="nav-link">Thesis</a>
@@ -419,15 +450,24 @@ footer {
   <div>
     <div class="trow reveal">
       <span class="tnum">01</span>
-      <div><h3 class="ttitle">Discipline Wins in a Softening Market</h3><p class="tbody">As the market softens, underwriting discipline and operational efficiency become the defining edge. Carriers that rely on favourable conditions will struggle. Those with rigorous risk selection, lean operations, and data-driven pricing will differentiate. Signal Insurance is built precisely for this environment.</p></div>
+      <div>
+        <h3 class="ttitle">Discipline Wins in a Softening Market</h3>
+        <p class="tbody">As the market softens, underwriting discipline and operational efficiency become the defining edge. Carriers that rely on favourable conditions will struggle. Those with rigorous risk selection, lean operations, and data-driven pricing will differentiate. Signal Insurance is built precisely for this environment.</p>
+      </div>
     </div>
     <div class="trow reveal">
       <span class="tnum">02</span>
-      <div><h3 class="ttitle">Built on APIs, Not Spreadsheets</h3><p class="tbody">APIs and data exchange are fundamental to the operating model of Signal Insurance. Traditional insurers run on email, PDFs, and spreadsheets: slow, error-prone, and impossible to scale. Signal is designed from the ground up around real-time data connections, automated workflows, and a platform that compounds in value with every risk written.</p></div>
+      <div>
+        <h3 class="ttitle">Built on APIs, Not Spreadsheets</h3>
+        <p class="tbody">APIs and data exchange are fundamental to the operating model of Signal Insurance. Traditional insurers run on email, PDFs, and spreadsheets: slow, error-prone, and impossible to scale. Signal is designed from the ground up around real-time data connections, automated workflows, and a platform that compounds in value with every risk written.</p>
+      </div>
     </div>
     <div class="trow reveal">
       <span class="tnum">03</span>
-      <div><h3 class="ttitle">Operators Who've Built This Before</h3><p class="tbody">Our founding team has built, scaled, and exited specialty carriers. We have reinsurer relationships, MGA distribution, and regulatory pathways already in motion. We are not here to learn the business. We are here to build the next generation P&C carrier, with the tools, talent, and ambition to do it right.</p></div>
+      <div>
+        <h3 class="ttitle">Operators Who've Built This Before</h3>
+        <p class="tbody">Our founding team has built, scaled, and exited specialty carriers. We have reinsurer relationships, MGA distribution, and regulatory pathways already in motion. We are not here to learn the business. We are here to build the next generation P&C carrier, with the tools, talent, and ambition to do it right.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -442,19 +482,27 @@ footer {
     <div class="plat-grid">
       <div class="pcard reveal">
         <svg class="pcard-icon" viewBox="0 0 38 38" fill="none"><rect x="1" y="1" width="36" height="36" rx="6" fill="rgba(26,75,140,.12)" stroke="rgba(26,75,140,.25)" stroke-width="1"/><rect x="8" y="17" width="5" height="12" rx="1" fill="#1a4b8c" opacity=".7"/><rect x="16" y="11" width="5" height="18" rx="1" fill="#1a4b8c"/><rect x="24" y="21" width="5" height="8" rx="1" fill="#1a4b8c" opacity=".5"/></svg>
-        <div class="pcard-title">Risk Engine</div><div class="pcard-text">Proprietary pricing models trained on forward-looking cohort data, not retrospective loss runs.</div><div class="pcard-tag">Core Infrastructure</div>
+        <div class="pcard-title">Risk Engine</div>
+        <div class="pcard-text">Proprietary pricing models trained on forward-looking cohort data, not retrospective loss runs.</div>
+        <div class="pcard-tag">Core Infrastructure</div>
       </div>
       <div class="pcard reveal">
         <svg class="pcard-icon" viewBox="0 0 38 38" fill="none"><rect x="1" y="1" width="36" height="36" rx="6" fill="rgba(192,125,42,.1)" stroke="rgba(192,125,42,.25)" stroke-width="1"/><circle cx="19" cy="19" r="11" stroke="#c07d2a" stroke-width="1" opacity=".35"/><circle cx="19" cy="19" r="6.5" stroke="#c07d2a" stroke-width="1.2" opacity=".7"/><circle cx="19" cy="19" r="2.5" fill="#c07d2a"/><line x1="19" y1="4" x2="19" y2="10" stroke="#c07d2a" stroke-width="1" opacity=".5"/><line x1="19" y1="28" x2="19" y2="34" stroke="#c07d2a" stroke-width="1" opacity=".5"/><line x1="4" y1="19" x2="10" y2="19" stroke="#c07d2a" stroke-width="1" opacity=".5"/><line x1="28" y1="19" x2="34" y2="19" stroke="#c07d2a" stroke-width="1" opacity=".5"/></svg>
-        <div class="pcard-title">Signal Intelligence</div><div class="pcard-text">Real-time climate, geospatial, and behavioral data feeds informing every underwriting decision.</div><div class="pcard-tag">Data Layer</div>
+        <div class="pcard-title">Signal Intelligence</div>
+        <div class="pcard-text">Real-time climate, geospatial, and behavioral data feeds informing every underwriting decision.</div>
+        <div class="pcard-tag">Data Layer</div>
       </div>
       <div class="pcard reveal">
         <svg class="pcard-icon" viewBox="0 0 38 38" fill="none"><rect x="1" y="1" width="36" height="36" rx="6" fill="rgba(26,140,122,.1)" stroke="rgba(26,140,122,.25)" stroke-width="1"/><path d="M7 24L13 16l6 4 6-8 5 4" stroke="#1a8c7a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="31" cy="16" r="2.5" fill="#1a8c7a"/></svg>
-        <div class="pcard-title">Portfolio Monitor</div><div class="pcard-text">Live concentration, accumulation, and correlation analysis across all lines in real time.</div><div class="pcard-tag">Analytics</div>
+        <div class="pcard-title">Portfolio Monitor</div>
+        <div class="pcard-text">Live concentration, accumulation, and correlation analysis across all lines in real time.</div>
+        <div class="pcard-tag">Analytics</div>
       </div>
       <div class="pcard reveal">
         <svg class="pcard-icon" viewBox="0 0 38 38" fill="none"><rect x="1" y="1" width="36" height="36" rx="6" fill="rgba(74,106,138,.1)" stroke="rgba(74,106,138,.25)" stroke-width="1"/><rect x="6" y="9" width="26" height="20" rx="2" stroke="#4a6a8a" stroke-width="1.2" fill="none"/><line x1="6" y1="15" x2="32" y2="15" stroke="#4a6a8a" stroke-width=".8" opacity=".5"/><rect x="9" y="18" width="7" height="4" rx=".5" fill="#4a6a8a" opacity=".6"/><rect x="20" y="18" width="9" height="4" rx=".5" fill="#4a6a8a" opacity=".35"/></svg>
-        <div class="pcard-title">Underwriter Workbench</div><div class="pcard-text">Modern tooling giving our underwriters all signals, history, and guidance in one place.</div><div class="pcard-tag">Workflow</div>
+        <div class="pcard-title">Underwriter Workbench</div>
+        <div class="pcard-text">Modern tooling giving our underwriters all signals, history, and guidance in one place.</div>
+        <div class="pcard-tag">Workflow</div>
       </div>
     </div>
   </div>
@@ -484,9 +532,27 @@ footer {
   <p class="stag reveal">Leadership</p>
   <h2 class="stitle reveal">Built by operators,<br>not consultants.</h2>
   <div class="team-grid">
-    <div class="tcard reveal"><div class="tcard-bar bl"></div><h3 class="tcard-name">Founding CEO</h3><p class="tcard-role">Chief Executive Officer</p><p class="tcard-bio">20+ years scaling specialty P&C platforms from formation through profitable exit. Led underwriting strategy for multiple top-20 E&S carriers. Deep authority on complex risk pricing and reinsurance structure.</p><p class="tcard-prev">Background: E&S Carriers · Specialty Lines · Reinsurance</p></div>
-    <div class="tcard reveal"><div class="tcard-bar go"></div><h3 class="tcard-name">Founding CUO</h3><p class="tcard-role">Chief Underwriting Officer</p><p class="tcard-bio">25+ years of specialty lines leadership with a data-first approach to risk selection. Developed proprietary loss models across environmental and climate-exposed commercial lines with measurable outperformance.</p><p class="tcard-prev">Background: Global Reinsurance · Specialty Carriers · Lloyd's</p></div>
-    <div class="tcard reveal"><div class="tcard-bar te"></div><h3 class="tcard-name">Founding CFO</h3><p class="tcard-role">Chief Financial Officer</p><p class="tcard-bio">Carrier-side finance executive experienced in structuring growth capital, reinsurance towers, and investor reporting for startup and growth-stage specialty insurers. Deep institutional LP relationships.</p><p class="tcard-prev">Background: Bermuda Market · Institutional Capital · ILS</p></div>
+    <div class="tcard reveal">
+      <div class="tcard-bar bl"></div>
+      <h3 class="tcard-name">Founding CEO</h3>
+      <p class="tcard-role">Chief Executive Officer</p>
+      <p class="tcard-bio">20+ years scaling specialty P&C platforms from formation through profitable exit. Led underwriting strategy for multiple top-20 E&S carriers. Deep authority on complex risk pricing and reinsurance structure.</p>
+      <p class="tcard-prev">Background: E&S Carriers · Specialty Lines · Reinsurance</p>
+    </div>
+    <div class="tcard reveal">
+      <div class="tcard-bar go"></div>
+      <h3 class="tcard-name">Founding CUO</h3>
+      <p class="tcard-role">Chief Underwriting Officer</p>
+      <p class="tcard-bio">25+ years of specialty lines leadership with a data-first approach to risk selection. Developed proprietary loss models across environmental and climate-exposed commercial lines with measurable outperformance.</p>
+      <p class="tcard-prev">Background: Global Reinsurance · Specialty Carriers · Lloyd's</p>
+    </div>
+    <div class="tcard reveal">
+      <div class="tcard-bar te"></div>
+      <h3 class="tcard-name">Founding CFO</h3>
+      <p class="tcard-role">Chief Financial Officer</p>
+      <p class="tcard-bio">Carrier-side finance executive experienced in structuring growth capital, reinsurance towers, and investor reporting for startup and growth-stage specialty insurers. Deep institutional LP relationships.</p>
+      <p class="tcard-prev">Background: Bermuda Market · Institutional Capital · ILS</p>
+    </div>
   </div>
 </section>
 
@@ -505,12 +571,29 @@ footer {
   </div>
 </section>
 
+<!-- EMAIL MODAL -->
+<div class="modal-overlay" id="modal">
+  <div class="modal-box">
+    <button class="modal-close" id="modal-close">✕</button>
+    <p class="modal-eyebrow">Investor Deck Request</p>
+    <h3 class="modal-title">Get in touch</h3>
+    <p class="modal-body">Send us an email and we'll get back to you with the investor deck and arrange a conversation.</p>
+    <div class="modal-address-box">
+      <p class="modal-address-label">Send to</p>
+      <p class="modal-address"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b1d9d4dddddef1c2d8d6dfd0ddd8dfc2c4c3d0dfd2d4d6c3dec4c19fd2dedc">[email&#160;protected]</a></p>
+    </div>
+    <div class="modal-actions">
+      <a class="modal-open-email" id="modal-email-link" href="/cdn-cgi/l/email-protection#59313c353536192a303e37383530372a2c2b38373a3c3e2b362c29773a3634662a2c3b333c3a2d6410372f3c2a2d362b7c6b691d3c3a327c6b690b3c282c3c2a2d">Open Email App</a>
+      <button class="modal-copy-btn" id="modal-copy">Copy Address</button>
+    </div>
+  </div>
+</div>
+
 <!-- FOOTER -->
 <footer>
   <div>
     <div class="fl-logo">
-      <div class="fl-r1"><span class="fl-dot">·</span><span class="fl-name">SIGNAL</span></div>
-      <div class="fl-r2"><span class="fl-sub">Insurance Group</span></div>
+      <span class="fl-dot">·</span><span class="fl-name">SIGNAL</span><span class="fl-sub">Insurance</span>
     </div>
     <div class="fl-url">signalinsurancegroup.com</div>
   </div>
@@ -519,47 +602,39 @@ footer {
 
 </div><!-- .page -->
 
-<script>
-/* ════════════════════════════════════════════════════════
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+/* ══════════════════════════════════════════════
    BACKGROUND — Abstract API node graph
-   10 unnamed nodes, 14 orthogonal connections,
-   max 4 vivid comet-trail signals at any time.
-   Canvas opacity 0.62 — visible but content reads clearly.
-════════════════════════════════════════════════════════ */
+   10 nodes · 14 orthogonal pipes · max 4 signals
+══════════════════════════════════════════════ */
 (function () {
-  const cv  = document.getElementById('bg');
+  const cv = document.getElementById('bg');
   const ctx = cv.getContext('2d');
 
-  // Abstract nodes — colour only, no labels
   const NODE_DEFS = [
-    { id:'a', hex:'#1a4b8c' }, { id:'b', hex:'#c07d2a' },
-    { id:'c', hex:'#1a4b8c' }, { id:'d', hex:'#1a8c7a' },
-    { id:'e', hex:'#4a6a8a' }, { id:'f', hex:'#1a4b8c' },
-    { id:'g', hex:'#c07d2a' }, { id:'h', hex:'#1a8c7a' },
-    { id:'i', hex:'#1a4b8c' }, { id:'j', hex:'#4a6a8a' },
+    {id:'a',hex:'#1a4b8c'},{id:'b',hex:'#c07d2a'},
+    {id:'c',hex:'#1a4b8c'},{id:'d',hex:'#1a8c7a'},
+    {id:'e',hex:'#4a6a8a'},{id:'f',hex:'#1a4b8c'},
+    {id:'g',hex:'#c07d2a'},{id:'h',hex:'#1a8c7a'},
+    {id:'i',hex:'#1a4b8c'},{id:'j',hex:'#4a6a8a'},
   ];
-
-  // Purposeful connections — form a readable graph
   const CONN_IDS = [
     ['a','b'],['b','c'],['a','d'],['c','e'],
     ['d','f'],['f','g'],['b','f'],['e','h'],
     ['g','h'],['f','i'],['h','j'],['i','j'],
     ['c','g'],['d','i'],
   ];
-
-  // Fixed relative positions — spread naturally across screen
   const POS = [
     [0.08,0.13],[0.28,0.07],[0.55,0.15],[0.80,0.20],
     [0.15,0.44],[0.44,0.37],[0.70,0.43],[0.90,0.54],
     [0.22,0.72],[0.60,0.78],
   ];
-
   const MAX_SIGNALS = 4;
-  const SIGNAL_PALETTE = [
-    { rgb:[26,75,140],  bright:'#4a8fd4' },
-    { rgb:[26,75,140],  bright:'#2f6ab8' },
-    { rgb:[192,125,42], bright:'#e0962e' },
-    { rgb:[26,140,122], bright:'#30c4a8' },
+  const PALETTE = [
+    {rgb:[26,75,140],  bright:'#4a8fd4'},
+    {rgb:[26,75,140],  bright:'#2f6ab8'},
+    {rgb:[192,125,42], bright:'#e0962e'},
+    {rgb:[26,140,122], bright:'#30c4a8'},
   ];
 
   let W, H, nodes=[], conns=[], signals=[], raf;
@@ -570,8 +645,7 @@ footer {
 
   function layout() {
     nodes = NODE_DEFS.map((d,i) => ({
-      ...d,
-      rgb: hexToRgb(d.hex),
+      ...d, rgb: hexToRgb(d.hex),
       x: POS[i][0]*W, y: POS[i][1]*H,
       alpha: 0, pulse: 0,
     }));
@@ -580,220 +654,153 @@ footer {
       b: nodes.find(n=>n.id===bId),
     }));
     signals = [];
-    // Stagger initial signals
-    const picks = [...conns].sort(()=>Math.random()-.5).slice(0, MAX_SIGNALS);
-    picks.forEach((c,i) => spawnSignal(c, i/MAX_SIGNALS));
+    [...conns].sort(()=>Math.random()-.5).slice(0,MAX_SIGNALS).forEach((c,i) => spawnSignal(c, i/MAX_SIGNALS));
   }
 
   function resize() {
     W = cv.width  = window.innerWidth;
     H = cv.height = window.innerHeight;
     cancelAnimationFrame(raf);
-    layout();
-    tick();
+    layout(); tick();
   }
 
   function getPath(a, b) {
     const mx = a.x + (b.x - a.x) * 0.5;
-    return [
-      {x:a.x, y:a.y},
-      {x:mx,  y:a.y},
-      {x:mx,  y:b.y},
-      {x:b.x, y:b.y},
-    ];
+    return [{x:a.x,y:a.y},{x:mx,y:a.y},{x:mx,y:b.y},{x:b.x,y:b.y}];
   }
 
   function pathPoint(pts, t) {
-    const lens = [];
-    let total = 0;
-    for (let i=0; i<pts.length-1; i++) {
-      const d = Math.hypot(pts[i+1].x-pts[i].x, pts[i+1].y-pts[i].y);
-      lens.push(d); total += d;
+    const lens=[]; let total=0;
+    for(let i=0;i<pts.length-1;i++){
+      const d=Math.hypot(pts[i+1].x-pts[i].x,pts[i+1].y-pts[i].y);
+      lens.push(d); total+=d;
     }
-    if (!total) return pts[0];
-    let rem = t * total;
-    for (let i=0; i<lens.length; i++) {
-      if (rem <= lens[i]) {
-        const f = rem / (lens[i]||1);
-        return {x: pts[i].x+(pts[i+1].x-pts[i].x)*f, y: pts[i].y+(pts[i+1].y-pts[i].y)*f};
+    if(!total) return pts[0];
+    let rem=t*total;
+    for(let i=0;i<lens.length;i++){
+      if(rem<=lens[i]){
+        const f=rem/(lens[i]||1);
+        return {x:pts[i].x+(pts[i+1].x-pts[i].x)*f, y:pts[i].y+(pts[i+1].y-pts[i].y)*f};
       }
-      rem -= lens[i];
+      rem-=lens[i];
     }
     return pts[pts.length-1];
   }
 
   function spawnSignal(conn, startT=0) {
-    const p = SIGNAL_PALETTE[Math.floor(Math.random()*SIGNAL_PALETTE.length)];
-    signals.push({ conn, t:startT,
-      speed: 0.0015 + Math.random()*0.0018,
-      pal: p, trail: [],
-      r: 3.5 + Math.random()*1.5,
-    });
+    const p=PALETTE[Math.floor(Math.random()*PALETTE.length)];
+    signals.push({conn, t:startT, speed:0.0015+Math.random()*0.0018, pal:p, trail:[], r:3.5+Math.random()*1.5});
   }
 
   function drawNode(n) {
-    const a = Math.min(n.alpha, 1);
-    const [r,g,b] = n.rgb;
+    const a=Math.min(n.alpha,1);
+    const [r,g,b]=n.rgb;
     ctx.save();
-
-    // Pulse ring on data arrival
-    if (n.pulse > 0) {
-      const pr = n.pulse * 30;
-      ctx.beginPath(); ctx.arc(n.x, n.y, pr, 0, Math.PI*2);
-      ctx.strokeStyle = `rgba(${r},${g},${b},${(1-n.pulse)*0.55})`;
-      ctx.lineWidth = 1.8; ctx.stroke();
-      n.pulse = Math.max(0, n.pulse - 0.02);
+    if(n.pulse>0){
+      const pr=n.pulse*30;
+      ctx.beginPath(); ctx.arc(n.x,n.y,pr,0,Math.PI*2);
+      ctx.strokeStyle=`rgba(${r},${g},${b},${(1-n.pulse)*0.55})`;
+      ctx.lineWidth=1.8; ctx.stroke();
+      n.pulse=Math.max(0,n.pulse-0.02);
     }
-
-    ctx.globalAlpha = a;
-
-    // Halo glow
-    const halo = ctx.createRadialGradient(n.x,n.y,0, n.x,n.y,32);
-    halo.addColorStop(0,   `rgba(${r},${g},${b},0.16)`);
-    halo.addColorStop(0.5, `rgba(${r},${g},${b},0.06)`);
-    halo.addColorStop(1,   `rgba(${r},${g},${b},0)`);
-    ctx.beginPath(); ctx.arc(n.x,n.y,32,0,Math.PI*2);
-    ctx.fillStyle = halo; ctx.fill();
-
-    // Outer ring
+    ctx.globalAlpha=a;
+    const halo=ctx.createRadialGradient(n.x,n.y,0,n.x,n.y,32);
+    halo.addColorStop(0,`rgba(${r},${g},${b},0.16)`);
+    halo.addColorStop(0.5,`rgba(${r},${g},${b},0.06)`);
+    halo.addColorStop(1,`rgba(${r},${g},${b},0)`);
+    ctx.beginPath(); ctx.arc(n.x,n.y,32,0,Math.PI*2); ctx.fillStyle=halo; ctx.fill();
     ctx.beginPath(); ctx.arc(n.x,n.y,14,0,Math.PI*2);
-    ctx.strokeStyle = `rgba(${r},${g},${b},0.42)`;
-    ctx.lineWidth = 1.4; ctx.stroke();
-
-    // Inner ring
+    ctx.strokeStyle=`rgba(${r},${g},${b},0.42)`; ctx.lineWidth=1.4; ctx.stroke();
     ctx.beginPath(); ctx.arc(n.x,n.y,8,0,Math.PI*2);
-    ctx.strokeStyle = `rgba(${r},${g},${b},0.6)`;
-    ctx.lineWidth = 1; ctx.stroke();
-
-    // Centre fill
+    ctx.strokeStyle=`rgba(${r},${g},${b},0.6)`; ctx.lineWidth=1; ctx.stroke();
     ctx.beginPath(); ctx.arc(n.x,n.y,4,0,Math.PI*2);
-    ctx.fillStyle = `rgba(${r},${g},${b},0.80)`;
-    ctx.fill();
-
+    ctx.fillStyle=`rgba(${r},${g},${b},0.80)`; ctx.fill();
     ctx.restore();
   }
 
   function drawPipe(conn) {
-    const pts = getPath(conn.a, conn.b);
+    const pts=getPath(conn.a,conn.b);
     ctx.save();
     ctx.beginPath();
-    ctx.moveTo(pts[0].x, pts[0].y);
-    for (let i=1; i<pts.length; i++) ctx.lineTo(pts[i].x, pts[i].y);
-    ctx.strokeStyle = 'rgba(26,75,140,0.22)';
-    ctx.lineWidth   = 1.1;
-    ctx.setLineDash([5, 10]);
-    ctx.stroke();
-    ctx.setLineDash([]);
+    ctx.moveTo(pts[0].x,pts[0].y);
+    for(let i=1;i<pts.length;i++) ctx.lineTo(pts[i].x,pts[i].y);
+    ctx.strokeStyle='rgba(26,75,140,0.22)';
+    ctx.lineWidth=1.1; ctx.setLineDash([5,10]); ctx.stroke(); ctx.setLineDash([]);
     ctx.restore();
   }
 
   function drawSignal(sig) {
-    const pts  = getPath(sig.conn.a, sig.conn.b);
-    const pos  = pathPoint(pts, sig.t);
-    const [r,g,b] = sig.pal.rgb;
-
-    // Record trail
-    sig.trail.push({x:pos.x, y:pos.y});
-    if (sig.trail.length > 26) sig.trail.shift();
-
-    // Comet tail
-    for (let i=0; i<sig.trail.length; i++) {
-      const f   = i / sig.trail.length;
-      const a   = f * f * 0.55;
-      const rad = sig.r * (0.25 + f * 0.55);
-      ctx.beginPath();
-      ctx.arc(sig.trail[i].x, sig.trail[i].y, rad, 0, Math.PI*2);
-      ctx.fillStyle = `rgba(${r},${g},${b},${a})`;
-      ctx.fill();
+    const pts=getPath(sig.conn.a,sig.conn.b);
+    const pos=pathPoint(pts,sig.t);
+    const [r,g,b]=sig.pal.rgb;
+    sig.trail.push({x:pos.x,y:pos.y});
+    if(sig.trail.length>26) sig.trail.shift();
+    for(let i=0;i<sig.trail.length;i++){
+      const f=i/sig.trail.length;
+      const a=f*f*0.55, rad=sig.r*(0.25+f*0.55);
+      ctx.beginPath(); ctx.arc(sig.trail[i].x,sig.trail[i].y,rad,0,Math.PI*2);
+      ctx.fillStyle=`rgba(${r},${g},${b},${a})`; ctx.fill();
     }
-
-    // Outer glow
-    const glow = ctx.createRadialGradient(pos.x,pos.y,0, pos.x,pos.y, sig.r*6);
-    glow.addColorStop(0,    `rgba(${r},${g},${b},0.7)`);
-    glow.addColorStop(0.3,  `rgba(${r},${g},${b},0.18)`);
-    glow.addColorStop(1,    `rgba(${r},${g},${b},0)`);
-    ctx.beginPath(); ctx.arc(pos.x,pos.y, sig.r*6, 0, Math.PI*2);
-    ctx.fillStyle = glow; ctx.fill();
-
-    // Bright core
-    ctx.beginPath(); ctx.arc(pos.x,pos.y, sig.r*0.75, 0, Math.PI*2);
-    ctx.fillStyle = sig.pal.bright;
-    ctx.globalAlpha = 0.95; ctx.fill(); ctx.globalAlpha = 1;
+    const glow=ctx.createRadialGradient(pos.x,pos.y,0,pos.x,pos.y,sig.r*6);
+    glow.addColorStop(0,`rgba(${r},${g},${b},0.7)`);
+    glow.addColorStop(0.3,`rgba(${r},${g},${b},0.18)`);
+    glow.addColorStop(1,`rgba(${r},${g},${b},0)`);
+    ctx.beginPath(); ctx.arc(pos.x,pos.y,sig.r*6,0,Math.PI*2); ctx.fillStyle=glow; ctx.fill();
+    ctx.beginPath(); ctx.arc(pos.x,pos.y,sig.r*0.75,0,Math.PI*2);
+    ctx.fillStyle=sig.pal.bright; ctx.globalAlpha=0.92; ctx.fill(); ctx.globalAlpha=1;
   }
 
   function tick() {
-    ctx.clearRect(0, 0, W, H);
-
-    nodes.forEach(n => { if (n.alpha < 1) n.alpha += 0.007; });
-
+    ctx.clearRect(0,0,W,H);
+    nodes.forEach(n=>{ if(n.alpha<1) n.alpha+=0.008; });
     conns.forEach(drawPipe);
-
-    signals = signals.filter(sig => {
-      sig.t += sig.speed;
-      if (sig.t >= 1) {
-        sig.conn.b.pulse = 1; // trigger pulse on destination
-        const next = conns[Math.floor(Math.random()*conns.length)];
-        spawnSignal(next, 0);
+    signals=signals.filter(sig=>{
+      sig.t+=sig.speed;
+      if(sig.t>=1){
+        sig.conn.b.pulse=1;
+        spawnSignal(conns[Math.floor(Math.random()*conns.length)],0);
         return false;
       }
-      drawSignal(sig);
-      return true;
+      drawSignal(sig); return true;
     });
-
     nodes.forEach(drawNode);
-    raf = requestAnimationFrame(tick);
+    raf=requestAnimationFrame(tick);
   }
 
-  // Top-up to MAX_SIGNALS if one finishes early
-  setInterval(() => {
-    if (signals.length < MAX_SIGNALS && conns.length) {
-      spawnSignal(conns[Math.floor(Math.random()*conns.length)], 0);
-    }
-  }, 2200);
-
-  window.addEventListener('resize', resize);
+  setInterval(()=>{ if(signals.length<MAX_SIGNALS && conns.length) spawnSignal(conns[Math.floor(Math.random()*conns.length)],0); },2200);
+  window.addEventListener('resize',resize);
   resize();
 })();
 
-
-/* ════════════════════
-   PLATFORM section bg — gentle mesh
-════════════════════ */
+/* ══ PLATFORM CANVAS ══ */
 (function(){
   const cv=document.getElementById('pcanvas'), ctx=cv.getContext('2d');
   let W,H,pts=[];
-  function init(){
-    W=cv.width=cv.offsetWidth; H=cv.height=cv.offsetHeight; pts=[];
-    for(let i=0;i<28;i++) pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.32,vy:(Math.random()-.5)*.32});
-  }
-  function draw(){
-    ctx.clearRect(0,0,W,H);
+  function init(){ W=cv.width=cv.offsetWidth; H=cv.height=cv.offsetHeight; pts=[];
+    for(let i=0;i<28;i++) pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.32,vy:(Math.random()-.5)*.32}); }
+  function draw(){ ctx.clearRect(0,0,W,H);
     pts.forEach(p=>{p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;});
     for(let i=0;i<pts.length;i++) for(let j=i+1;j<pts.length;j++){
       const d=Math.hypot(pts[i].x-pts[j].x,pts[i].y-pts[j].y);
       if(d<165){ctx.beginPath();ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);ctx.strokeStyle=`rgba(200,218,238,${.06*(1-d/165)})`;ctx.lineWidth=.7;ctx.stroke();}
     }
     pts.forEach(p=>{ctx.beginPath();ctx.arc(p.x,p.y,1.4,0,Math.PI*2);ctx.fillStyle='rgba(200,218,238,0.18)';ctx.fill();});
-    requestAnimationFrame(draw);
-  }
+    requestAnimationFrame(draw); }
   new ResizeObserver(init).observe(cv.parentElement); init(); draw();
 })();
 
-
-/* ════════════════════
-   MARKET orbital canvas
-════════════════════ */
+/* ══ MARKET CANVAS ══ */
 (function(){
   const cv=document.getElementById('mcanvas'), ctx=cv.getContext('2d');
   let W,H,t=0;
   const segs=[
-    {lbl:'Comm. Property', r:.61, col:'#1a4b8c', a:0},
-    {lbl:'E&S Lines',      r:.57, col:'#2563b8', a:1.05},
-    {lbl:'MGA Programs',   r:.53, col:'#c07d2a', a:2.10},
-    {lbl:'Construction',   r:.51, col:'#1a8c7a', a:3.14},
-    {lbl:'Tech E&O',       r:.47, col:'#4a6a8a', a:4.19},
-    {lbl:'Environmental',  r:.43, col:'#6a8aaa', a:5.24},
-    {lbl:'Inland Marine',  r:.39, col:'#8faab8', a:0.52},
+    {lbl:'Comm. Property',r:.61,col:'#1a4b8c',a:0},
+    {lbl:'MGA Programs',r:.57,col:'#c07d2a',a:1.05},
+    {lbl:'E&S Lines',r:.53,col:'#2563b8',a:2.10},
+    {lbl:'Construction',r:.51,col:'#1a8c7a',a:3.14},
+    {lbl:'Tech E&O',r:.47,col:'#4a6a8a',a:4.19},
+    {lbl:'Environmental',r:.43,col:'#6a8aaa',a:5.24},
+    {lbl:'Inland Marine',r:.39,col:'#8faab8',a:0.52},
   ];
   function init(){W=cv.width=cv.offsetWidth;H=cv.height=cv.offsetHeight;}
   function draw(){
@@ -823,10 +830,7 @@ footer {
   new ResizeObserver(init).observe(cv.parentElement); init(); draw();
 })();
 
-
-/* ════════════════════
-   CTA section bg
-════════════════════ */
+/* ══ CTA CANVAS ══ */
 (function(){
   const cv=document.getElementById('ccanvas'), ctx=cv.getContext('2d');
   let W,H,pts=[];
@@ -839,27 +843,36 @@ footer {
       if(d<130){ctx.beginPath();ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);ctx.strokeStyle=`rgba(192,125,42,${.09*(1-d/130)})`;ctx.lineWidth=.6;ctx.stroke();}
     }
     pts.forEach(p=>{ctx.beginPath();ctx.arc(p.x,p.y,1.2,0,Math.PI*2);ctx.fillStyle='rgba(192,125,42,0.18)';ctx.fill();});
-    requestAnimationFrame(draw);
-  }
+    requestAnimationFrame(draw);}
   new ResizeObserver(init).observe(cv.parentElement); init(); draw();
 })();
 
-
-/* ════════════════════
-   Scroll reveal
-════════════════════ */
+/* ══ SCROLL REVEAL ══ */
 const ro = new IntersectionObserver(es => es.forEach(e => {
-  if (e.isIntersecting) { e.target.classList.add('on'); ro.unobserve(e.target); }
-}), { threshold: .1 });
+  if(e.isIntersecting){ e.target.classList.add('on'); ro.unobserve(e.target); }
+}), {threshold:.1});
 document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
 
-/* ══ CTA FORM — mailto ══ */
-document.getElementById('cta-submit').addEventListener('click', function() {
-  const email = document.getElementById('cta-email').value;
-  const subject = encodeURIComponent('Investor Deck Request');
-  const body = encodeURIComponent('Hi,\n\nI would like to request the Signal Insurance investor deck.\n\nMy email: ' + (email || 'not provided') + '\n\nThank you.');
-  window.location.href = 'mailto:hello@signalinsurancegroup.com?subject=' + subject + '&body=' + body;
-});
-</script>
-</body>
-</html>
+/* ══ CTA MODAL ══ */
+(function(){
+  const modal      = document.getElementById('modal');
+  const closeBtn   = document.getElementById('modal-close');
+  const submitBtn  = document.getElementById('cta-submit');
+  const emailInput = document.getElementById('cta-email');
+  const emailLink  = document.getElementById('modal-email-link');
+  const copyBtn    = document.getElementById('modal-copy');
+
+  submitBtn.addEventListener('click', function(){
+    const val = emailInput.value.trim();
+    const body = val
+      ? 'Hi,\n\nI would like to request the Signal Insurance investor deck.\n\nPlease reply to: ' + val + '\n\nThank you.'
+      : 'Hi,\n\nI would like to request the Signal Insurance investor deck.\n\nThank you.';
+    emailLink.href = 'mailto:hello@signalinsurancegroup.com?subject=Investor%20Deck%20Request&body=' + encodeURIComponent(body);
+    modal.classList.add('open');
+  });
+
+  closeBtn.addEventListener('click', function(){ modal.classList.remove('open'); });
+  modal.addEventListener('click', function(e){ if(e.target===modal) modal.classList.remove('open'); });
+
+  copyBtn.addEventListener('click', function(){
+    navig

@@ -28,7 +28,7 @@ body { background: var(--bg); color: var(--ink); font-family: 'Geist', sans-seri
 #bg  { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
 .page { position: relative; z-index: 1; }
 
-/* ══════════════════ NAV ══════════════════ */
+/* ══ NAV ══ */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 200;
   display: flex; align-items: center; justify-content: space-between;
@@ -47,17 +47,16 @@ nav {
 .nav-btn   { background: var(--blue); color: #fff; border: none; padding: 10px 22px; font-family: 'Montserrat', sans-serif; font-size: 10.5px; font-weight: 600; letter-spacing: 0.08em; text-decoration: none; cursor: pointer; transition: background .2s; display: inline-block; }
 .nav-btn:hover { background: var(--blue2); }
 
-/* ══════════════════ HERO ══════════════════ */
+/* ══ HERO ══ */
 .hero {
   min-height: 100vh;
   display: grid; grid-template-columns: 1fr 400px;
   align-items: center;
   padding: 120px 52px 80px; gap: 48px;
 }
-.hero-text { position: relative; padding: 48px 36px 48px 36px; margin: 0 44px; }
+.hero-text { position: relative; padding: 48px 36px; margin: 0 44px; }
 .hero-text::before {
-  content: ''; position: absolute;
-  inset: 0;
+  content: ''; position: absolute; inset: 0;
   background: radial-gradient(ellipse 90% 85% at 50% 50%,
     rgba(237,242,247,0.88) 0%,
     rgba(237,242,247,0.78) 45%,
@@ -73,21 +72,18 @@ nav {
   opacity: 0; animation: fadeUp .7s ease forwards .3s;
 }
 .badge-dot  { width: 6px; height: 6px; border-radius: 50%; background: var(--teal); box-shadow: 0 0 0 3px rgba(26,140,122,.2); animation: blink 2.2s ease infinite; }
-@keyframes blink { 0%,100%{box-shadow:0 0 0 3px rgba(26,140,122,.2);}50%{box-shadow:0 0 0 8px rgba(26,140,122,.06);} }
+@keyframes blink { 0%,100%{ box-shadow: 0 0 0 3px rgba(26,140,122,.2); } 50%{ box-shadow: 0 0 0 8px rgba(26,140,122,.06); } }
 .badge-text { font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--blue); }
 
 .hero-stamp {
-  display: flex; align-items: center; gap: 8px;
-  flex-wrap: wrap;
+  display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
   margin-bottom: 28px;
   opacity: 0; animation: fadeUp .7s ease forwards .45s;
 }
 .hero-stamp-chip {
-  background: var(--blue); color: #fff;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 9.5px; font-weight: 700;
+  font-family: 'Montserrat', sans-serif; font-size: 9.5px; font-weight: 700;
   letter-spacing: 0.22em; text-transform: uppercase;
-  padding: 6px 14px; display: inline-block;
+  padding: 6px 14px; display: inline-block; color: #fff;
 }
 .hero-stamp-rule { display: block; width: 28px; height: 1px; background: rgba(26,75,140,0.25); }
 
@@ -106,8 +102,8 @@ nav {
   opacity: 0; animation: fadeUp .9s ease forwards .7s;
 }
 .hero-btns { display: flex; align-items: center; gap: 28px; opacity: 0; animation: fadeUp .9s ease forwards .9s; }
-.btn-primary   { background: var(--blue); color: #fff; border: none; padding: 16px 36px; font-family: 'Montserrat', sans-serif; font-size: 11.5px; font-weight: 600; letter-spacing: .08em; text-decoration: none; display: inline-block; transition: background .2s, transform .15s; }
-.btn-primary:hover  { background: var(--blue2); transform: translateY(-1px); }
+.btn-primary  { background: var(--blue); color: #fff; border: none; padding: 16px 36px; font-family: 'Montserrat', sans-serif; font-size: 11.5px; font-weight: 600; letter-spacing: .08em; text-decoration: none; display: inline-block; transition: background .2s, transform .15s; }
+.btn-primary:hover { background: var(--blue2); transform: translateY(-1px); }
 .btn-secondary { font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: var(--mid); text-decoration: none; display: flex; align-items: center; gap: 7px; transition: color .2s; }
 .btn-secondary::after { content: '→'; font-size: 13px; }
 .btn-secondary:hover { color: var(--blue); }
@@ -127,7 +123,7 @@ nav {
 .hcard-lbl { font-family: 'Geist Mono', monospace; font-size: 8.5px; letter-spacing: .16em; text-transform: uppercase; color: var(--light); margin-bottom: 3px; }
 .hcard-val { font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 600; color: var(--ink); }
 
-/* ══════════════════ STATS ══════════════════ */
+/* ══ STATS ══ */
 .strip { display: grid; grid-template-columns: repeat(4,1fr); background: rgba(255,255,255,0.97); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
 .strip-cell { padding: 42px 44px; border-right: 1px solid var(--rule); }
 .strip-cell:last-child { border-right: none; }
@@ -135,13 +131,13 @@ nav {
 .strip-n sup { font-size: 22px; color: var(--blue); vertical-align: super; }
 .strip-l { font-family: 'Geist Mono', monospace; font-size: 9.5px; letter-spacing: .17em; text-transform: uppercase; color: var(--mid); line-height: 1.55; }
 
-/* ══════════════════ SHARED ══════════════════ */
+/* ══ SHARED ══ */
 .stag { font-family: 'Geist Mono', monospace; font-size: 9.5px; letter-spacing: .24em; text-transform: uppercase; color: var(--blue); display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
 .stag::before { content: ''; width: 22px; height: 1px; background: var(--blue); flex-shrink: 0; }
 .stitle { font-family: 'Fraunces', serif; font-size: clamp(30px,3.5vw,50px); font-weight: 300; line-height: 1.15; color: var(--ink); }
 .stitle em { font-style: italic; color: var(--blue); }
 
-/* ══════════════════ THESIS ══════════════════ */
+/* ══ THESIS ══ */
 .thesis { display: grid; grid-template-columns: 340px 1fr; gap: 80px; align-items: start; padding: 110px 52px; background: rgba(237,242,247,0.95); backdrop-filter: blur(28px); }
 .thesis-sticky { position: sticky; top: 100px; }
 .trow { padding: 42px 0; border-bottom: 1px solid var(--rule); display: grid; grid-template-columns: 36px 1fr; gap: 26px; align-items: start; }
@@ -150,7 +146,7 @@ nav {
 .ttitle { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 400; color: var(--ink); margin-bottom: 11px; }
 .tbody  { font-size: 14px; line-height: 1.85; color: var(--mid); font-weight: 300; }
 
-/* ══════════════════ PLATFORM ══════════════════ */
+/* ══ PLATFORM ══ */
 .platform { background: var(--ink); padding: 110px 52px; position: relative; overflow: hidden; }
 #pcanvas  { position: absolute; inset: 0; width: 100%; height: 100%; opacity: .38; }
 .plat-inner { position: relative; z-index: 1; }
@@ -169,10 +165,17 @@ nav {
 .pcard-text  { font-size: 13px; line-height: 1.75; color: rgba(200,218,238,.52); font-weight: 300; }
 .pcard-tag   { margin-top: 18px; font-family: 'Geist Mono', monospace; font-size: 9px; letter-spacing: .15em; text-transform: uppercase; color: var(--gold); }
 
-/* ══════════════════ MARKET ══════════════════ */
+/* ══ MARKET ══ */
 .market { padding: 110px 52px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; background: rgba(237,242,247,0.95); backdrop-filter: blur(28px); }
 .market-sub { font-size: 15px; font-weight: 300; line-height: 1.8; color: var(--mid); margin: 22px 0 14px; }
-.market-geo { font-family: 'Geist Mono', monospace; font-size: 9px; letter-spacing: .18em; text-transform: uppercase; color: var(--light); margin-bottom: 10px; }
+.market-split { margin: 0 0 22px; }
+.market-split-bar { display: flex; height: 32px; overflow: hidden; margin-bottom: 8px; }
+.market-split-seg { display: flex; align-items: center; justify-content: space-between; padding: 0 12px; font-family: 'Geist Mono', monospace; font-size: 9px; letter-spacing: .1em; text-transform: uppercase; }
+.market-split-seg.personal   { background: var(--mid); color: rgba(255,255,255,.8); flex: 55; }
+.market-split-seg.commercial { background: var(--blue); color: rgba(255,255,255,.9); flex: 45; }
+.market-split-pct { font-weight: 600; margin-left: 8px; }
+.market-split-note { font-family: 'Geist Mono', monospace; font-size: 8.5px; letter-spacing: .1em; color: var(--mid); }
+.market-geo { font-family: 'Geist Mono', monospace; font-size: 9px; letter-spacing: .18em; text-transform: uppercase; color: var(--mid); margin-bottom: 10px; margin-top: 18px; padding: 8px 12px; background: rgba(26,75,140,0.07); border-left: 2px solid var(--blue); }
 .seg-list { display: flex; flex-direction: column; gap: 2px; }
 .seg { display: flex; align-items: center; gap: 14px; background: #fff; border: 1px solid var(--rule); padding: 13px 18px; transition: background .2s; }
 .seg:hover { background: #f8fafc; }
@@ -185,7 +188,7 @@ nav {
 .market-visual { height: 420px; }
 #mcanvas { width: 100%; height: 100%; }
 
-/* ══════════════════ TEAM ══════════════════ */
+/* ══ TEAM ══ */
 .team { padding: 110px 52px; background: rgba(237,242,247,0.95); backdrop-filter: blur(28px); }
 .team-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; margin-top: 54px; }
 .tcard { background: #fff; border: 1px solid var(--rule); padding: 38px 34px; position: relative; overflow: hidden; transition: box-shadow .3s; }
@@ -198,8 +201,14 @@ nav {
 .tcard-role { font-family: 'Geist Mono', monospace; font-size: 9.5px; letter-spacing: .17em; color: var(--blue); text-transform: uppercase; margin-bottom: 20px; }
 .tcard-bio  { font-size: 13.5px; line-height: 1.8; color: var(--mid); font-weight: 300; margin-bottom: 18px; }
 .tcard-prev { font-family: 'Geist Mono', monospace; font-size: 9.5px; letter-spacing: .1em; color: var(--light); }
+.team-stealth { margin-top: 48px; }
+.team-stealth-inner { display: flex; align-items: center; gap: 16px; padding: 20px 32px; background: var(--ink); width: 100%; }
+.team-stealth-dot  { width: 7px; height: 7px; border-radius: 50%; background: var(--gold); flex-shrink: 0; box-shadow: 0 0 0 3px rgba(192,125,42,.25); animation: blink 2.2s ease infinite; }
+.team-stealth-text { font-family: 'Geist Mono', monospace; font-size: 10.5px; letter-spacing: 0.1em; font-weight: 300; color: rgba(200,218,238,.75); line-height: 1.6; }
+.team-stealth-link { color: var(--gold2); text-decoration: none; font-weight: 500; transition: color .2s; }
+.team-stealth-link:hover { color: var(--gold); }
 
-/* ══════════════════ CTA ══════════════════ */
+/* ══ CTA ══ */
 .cta { background: linear-gradient(155deg,#0d1929 0%,#0f2040 55%,#0a1f18 100%); padding: 130px 52px; text-align: center; position: relative; overflow: hidden; }
 #ccanvas { position: absolute; inset: 0; width: 100%; height: 100%; opacity: .45; }
 .cta-inner { position: relative; z-index: 1; }
@@ -216,7 +225,7 @@ nav {
 .cta-btn:hover { background: var(--gold2); }
 .cta-note { font-family: 'Geist Mono', monospace; font-size: 9.5px; letter-spacing: .1em; color: rgba(200,218,238,.62); text-transform: uppercase; }
 
-/* ══════════════════ MODAL ══════════════════ */
+/* ══ MODAL ══ */
 .modal-overlay { display: none; position: fixed; inset: 0; z-index: 9999; background: rgba(13,25,41,0.82); backdrop-filter: blur(10px); align-items: center; justify-content: center; }
 .modal-overlay.open { display: flex; }
 .modal-box { background: #fff; max-width: 460px; width: 90%; padding: 44px 40px; position: relative; box-shadow: 0 32px 80px rgba(0,0,0,0.28); }
@@ -234,7 +243,7 @@ nav {
 .modal-copy-btn { background: var(--bg); border: 1px solid var(--rule); color: var(--mid); padding: 14px 20px; font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; cursor: pointer; transition: background .2s, color .2s; white-space: nowrap; }
 .modal-copy-btn:hover { background: #fff; color: var(--ink); }
 
-/* ══════════════════ FOOTER ══════════════════ */
+/* ══ FOOTER ══ */
 footer { background: var(--ink); padding: 44px 52px; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(255,255,255,.1); }
 .fl-logo { display: flex; align-items: center; margin-bottom: 8px; }
 .fl-dot  { font-family: 'Montserrat', sans-serif; font-size: 20px; font-weight: 900; color: var(--gold); line-height: 1; margin-right: 5px; }
@@ -243,19 +252,19 @@ footer { background: var(--ink); padding: 44px 52px; display: flex; align-items:
 .fl-url  { font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: .14em; color: rgba(200,218,238,.38); }
 .fl-legal { font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: .06em; color: rgba(200,218,238,.52); text-align: right; max-width: 400px; line-height: 1.8; }
 
-/* ══════════════════ ANIMATIONS ══════════════════ */
-@keyframes fadeUp  { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
-@keyframes fadeIn  { from { opacity:0; } to { opacity:1; } }
+/* ══ ANIMATIONS ══ */
+@keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 .reveal { opacity:0; transform:translateY(22px); transition: opacity .8s ease, transform .8s ease; }
 .reveal.on { opacity:1; transform:none; }
 
-/* ══════════════════ TABLET ══════════════════ */
+/* ══ TABLET ══ */
 @media (max-width: 960px) {
   nav { padding: 18px 24px; }
   .nav-links .nav-link { display: none; }
   .hero { grid-template-columns: 1fr; padding: 110px 24px 60px; }
-  .hero-text { padding: 0; }
-  .hero-text::before { inset: -14px -24px -14px -24px; }
+  .hero-text { padding: 28px; margin: 0; }
+  .hero-text::before { background: rgba(237,242,247,0.92); backdrop-filter: blur(12px); }
   .hero-cards { display: none; }
   .strip { grid-template-columns: repeat(2,1fr); }
   .thesis { grid-template-columns: 1fr; padding: 80px 24px; gap: 36px; }
@@ -274,13 +283,14 @@ footer { background: var(--ink); padding: 44px 52px; display: flex; align-items:
   .modal-box { padding: 32px 24px; }
 }
 
-/* ══════════════════ MOBILE — iPhone ══════════════════ */
+/* ══ MOBILE ══ */
 @media (max-width: 480px) {
   nav { padding: 16px 20px; }
   .logo-name, .logo-ins { font-size: 14px; }
   .logo-dot { font-size: 19px; }
   .hero { min-height: 100svh; padding: 96px 20px 52px; align-items: flex-start; }
-  .hero-text::before { inset: -10px -20px -10px -20px; background: rgba(237,242,247,0.7); backdrop-filter: blur(14px); }
+  .hero-text { padding: 24px; margin: 0; }
+  .hero-text::before { background: rgba(237,242,247,0.94); backdrop-filter: blur(14px); }
   .hero-badge { padding: 6px 12px; margin-bottom: 14px; }
   .badge-text { font-size: 8.5px; letter-spacing: .14em; }
   .hero-stamp { margin-bottom: 18px; }
@@ -309,6 +319,7 @@ footer { background: var(--ink); padding: 44px 52px; display: flex; align-items:
   .team { padding: 60px 20px; }
   .tcard { padding: 28px 22px; }
   .tcard-name { font-size: 17px; }
+  .team-stealth-inner { flex-direction: column; align-items: flex-start; gap: 8px; }
   .cta { padding: 72px 20px; }
   .cta-h2 { font-size: clamp(30px,8vw,48px); }
   .cta-p { font-size: 14px; }
@@ -351,12 +362,12 @@ footer { background: var(--ink); padding: 44px 52px; display: flex; align-items:
       <span class="badge-text">Now Raising — Founding Round · 2026</span>
     </div>
     <div class="hero-stamp">
-      <span class="hero-stamp-chip">P&amp;C Specialty Carrier</span>
+      <span class="hero-stamp-chip" style="background:var(--blue);">P&amp;C Specialty Carrier</span>
       <span class="hero-stamp-rule"></span>
       <span class="hero-stamp-chip" style="background:var(--teal);">Tech-Enabled</span>
     </div>
     <h1 class="hero-h1">Where <em>underwriting</em><br>talent meets<br><span class="g">modern technology.</span></h1>
-    <p class="hero-sub">Signal Insurance is rewriting what a specialty P&C carrier looks like. Modern technology in the hands of expert underwriters means better loss ratios, leaner operations, and a competitive edge that legacy carriers simply can't replicate. We would welcome conversations with investors, reinsurers, and brokers.</p>
+    <p class="hero-sub">Signal Insurance is building the next generation specialty P&C carrier. Modern technology in the hands of expert underwriters means better loss ratios, leaner operations, and a competitive edge that legacy carriers simply can't replicate. We would welcome conversations with investors, reinsurers, and brokers.</p>
     <div class="hero-btns">
       <a href="#contact" class="btn-primary">Request Investor Deck</a>
       <a href="#thesis"  class="btn-secondary">View Investment Thesis</a>
@@ -364,28 +375,24 @@ footer { background: var(--ink); padding: 44px 52px; display: flex; align-items:
   </div>
   <div class="hero-cards">
     <div class="hcard c1">
-      <div class="hcard-ico"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1" y="5" width="3" height="8" rx=".5" fill="#1a4b8c" opacity=".7"/><rect x="6" y="2" width="3" height="12" rx=".5" fill="#1a4b8c"/><rect x="11" y="7" width="3" height="6" rx=".5" fill="#1a4b8c" opacity=".5"/></svg></div>
-      <div><div class="hcard-lbl">Risk Engine</div><div class="hcard-val">Proprietary Pricing Model</div></div>
+      <div class="hcard-ico"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="3" cy="8" r="2" stroke="#1a4b8c" stroke-width="1.2"/><circle cx="13" cy="4" r="2" stroke="#1a4b8c" stroke-width="1.2"/><circle cx="13" cy="12" r="2" stroke="#1a4b8c" stroke-width="1.2"/><path d="M5 7.5L11 4.5M5 8.5L11 11.5" stroke="#1a4b8c" stroke-width="1" opacity=".6"/><rect x="7" y="6" width="2" height="4" rx=".5" fill="#1a4b8c" opacity=".3"/></svg></div>
+      <div><div class="hcard-lbl">Submission Pipeline</div><div class="hcard-val">Controlled AI Triage &amp; Routing</div></div>
     </div>
     <div class="hcard c2">
-      <div class="hcard-ico"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M1 8 Q4 4 8 6 Q12 8 15 4" stroke="#c07d2a" stroke-width="1.3" stroke-linecap="round" fill="none"/><circle cx="3" cy="10" r="1.5" fill="#c07d2a" opacity=".6"/><circle cx="8" cy="7" r="1.5" fill="#c07d2a" opacity=".8"/><circle cx="13" cy="5" r="1.5" fill="#c07d2a"/></svg></div>
-      <div><div class="hcard-lbl">External Data Feeds</div><div class="hcard-val">Cat · Flood · Credit · COPE</div></div>
+      <div class="hcard-ico"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 11L5 8l3 3 5-6" stroke="#c07d2a" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="13" cy="4" r="1.5" fill="#c07d2a"/><rect x="1" y="12.5" width="14" height="1" rx=".5" fill="#c07d2a" opacity=".2"/></svg></div>
+      <div><div class="hcard-lbl">Augmented Underwriting</div><div class="hcard-val">Data-Enriched Decisions &amp; Portfolio Orchestration</div></div>
     </div>
     <div class="hcard c3">
-      <div class="hcard-ico"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 9L5 6l3 4 3-6 3 3" stroke="#1a8c7a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="14" cy="7" r="1.5" fill="#1a8c7a"/></svg></div>
-      <div><div class="hcard-lbl">Portfolio Monitor</div><div class="hcard-val">Live Accumulation Analysis</div></div>
+      <div class="hcard-ico"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="14" height="14" rx="2" stroke="#1a8c7a" stroke-width="1.1" opacity=".4"/><path d="M4 10l2.5-3 2.5 2 3-4" stroke="#1a8c7a" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="5" r="1.2" fill="#1a8c7a"/></svg></div>
+      <div><div class="hcard-lbl">Portfolio Performance</div><div class="hcard-val">Live Accumulation &amp; Analytics</div></div>
     </div>
     <div class="hcard c4">
-      <div class="hcard-ico"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1.5" y="3.5" width="13" height="9" rx="1" stroke="#4a6a8a" stroke-width="1.2"/><path d="M4 7h8M4 9.5h5" stroke="#4a6a8a" stroke-width="1" stroke-linecap="round"/></svg></div>
-      <div><div class="hcard-lbl">Reinsurance</div><div class="hcard-val">Institutional Tower Structure</div></div>
+      <div class="hcard-ico"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1" y="4" width="14" height="2" rx=".5" fill="#4a6a8a" opacity=".35"/><rect x="1" y="7.5" width="10" height="2" rx=".5" fill="#4a6a8a" opacity=".55"/><rect x="1" y="11" width="12" height="2" rx=".5" fill="#4a6a8a" opacity=".75"/><circle cx="14" cy="12" r="1.5" fill="#4a6a8a"/></svg></div>
+      <div><div class="hcard-lbl">AI &amp; Agentic Readiness</div><div class="hcard-val">Infrastructure Built for the AI Era</div></div>
     </div>
-    <div class="hcard c1">
-      <div class="hcard-ico"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 4h7M2 8h5M2 12h3" stroke="#1a4b8c" stroke-width="1.2" stroke-linecap="round"/><circle cx="12" cy="9" r="3" stroke="#1a4b8c" stroke-width="1.2"/><path d="M11.3 9l.9.9 1.4-1.4" stroke="#1a4b8c" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      <div><div class="hcard-lbl">AI Submission Triage</div><div class="hcard-val">Automated Clearance &amp; Scoring</div></div>
-    </div>
-    <div class="hcard c2">
-      <div class="hcard-ico"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="4" cy="8" r="2.5" stroke="#c07d2a" stroke-width="1.2"/><circle cx="12" cy="4" r="2" stroke="#c07d2a" stroke-width="1.2"/><circle cx="12" cy="12" r="2" stroke="#c07d2a" stroke-width="1.2"/><line x1="6.4" y1="7" x2="10.2" y2="4.8" stroke="#c07d2a" stroke-width="1" opacity=".7"/><line x1="6.4" y1="9" x2="10.2" y2="11.2" stroke="#c07d2a" stroke-width="1" opacity=".7"/></svg></div>
-      <div><div class="hcard-lbl">Broker Data API</div><div class="hcard-val">Live Distribution Connect</div></div>
+    <div class="hcard c3">
+      <div class="hcard-ico"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="5" r="2.5" stroke="#1a8c7a" stroke-width="1.2"/><path d="M3 13c0-2.76 2.24-5 5-5s5 2.24 5 5" stroke="#1a8c7a" stroke-width="1.2" stroke-linecap="round"/><path d="M11 8.5l1.5 1.5-1.5 1.5" stroke="#1a8c7a" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" opacity=".6"/></svg></div>
+      <div><div class="hcard-lbl">People-Led, Tech-Enabled</div><div class="hcard-val">Underwriting Talent Remains the Differentiator</div></div>
     </div>
   </div>
 </section>
@@ -423,14 +430,14 @@ footer { background: var(--ink); padding: 44px 52px; display: flex; align-items:
       <span class="tnum">03</span>
       <div>
         <h3 class="ttitle">Operators Who've Built This Before</h3>
-        <p class="tbody">Our founding team has built, scaled, and exited specialty carriers. We have reinsurer relationships, MGA distribution, and regulatory pathways already in motion. We are not here to learn the business. We are here to build the next generation P&C carrier, with the tools, talent, and ambition to do it right.</p>
+        <p class="tbody">Our founding team has built and scaled specialty portfolios and underwriting teams within some of the world's leading carriers. We bring reinsurer relationships, MGA distribution, and regulatory experience already in motion. We are not here to learn the business. We are here to build the next generation P&C carrier, with the tools, talent, and ambition to do it right.</p>
       </div>
     </div>
     <div class="trow reveal">
       <span class="tnum">04</span>
       <div>
-        <h3 class="ttitle">AI-Native from Day One</h3>
-        <p class="tbody">Signal is being built with AI and agentic AI embedded into its core operating model — not bolted on later. From submission triage to risk scoring, portfolio analysis to broker communication, every workflow is designed to be intelligently automated. This is not a feature. It is the foundation.</p>
+        <h3 class="ttitle">Infrastructure Built for the AI Era</h3>
+        <p class="tbody">Signal is being built with AI and agentic AI readiness embedded into every layer of its operating model — not bolted on later. From submission triage to risk scoring, portfolio analysis to broker communication, every system and workflow is designed from the ground up to be intelligently automated. This is not a feature. It is the architecture.</p>
       </div>
     </div>
   </div>
@@ -476,20 +483,33 @@ footer { background: var(--ink); padding: 44px 52px; display: flex; align-items:
 <section class="market">
   <div>
     <p class="stag reveal">Market Opportunity</p>
-    <h2 class="stitle reveal">Underserved complexity<br>is our moat.</h2>
-    <p class="market-sub reveal">As weather volatility, cyber exposure, and supply chain fragility reshape the risk landscape, legacy carriers retreat from the very segments that need coverage most.</p>
-    <div class="market-geo reveal">U.S. Specialty P&amp;C — Annual Written Premium by Segment</div>
-    <div class="seg-list reveal">
-      <div class="seg"><span class="seg-name">Commercial Property</span><div class="seg-bar-bg"><div class="seg-bar-fg" style="width:90%"></div></div><span class="seg-sz">$280B+</span></div>
-      <div class="seg"><span class="seg-name">MGA Programs &amp; Delegated Authority</span><div class="seg-bar-bg"><div class="seg-bar-fg" style="width:78%"></div></div><span class="seg-sz">$110B+</span></div>
-      <div class="seg"><span class="seg-name">Excess &amp; Surplus Lines</span><div class="seg-bar-bg"><div class="seg-bar-fg" style="width:72%"></div></div><span class="seg-sz">$100B+</span></div>
-      <div class="seg"><span class="seg-name">Primary &amp; Excess Casualty</span><div class="seg-bar-bg"><div class="seg-bar-fg" style="width:70%"></div></div><span class="seg-sz">$95B+</span></div>
-      <div class="seg"><span class="seg-name">Construction Risk</span><div class="seg-bar-bg"><div class="seg-bar-fg" style="width:68%"></div></div><span class="seg-sz">$51B+</span></div>
-      <div class="seg"><span class="seg-name">Technology E&amp;O</span><div class="seg-bar-bg"><div class="seg-bar-fg" style="width:58%"></div></div><span class="seg-sz">$42B+</span></div>
-      <div class="seg"><span class="seg-name">Environmental Liability</span><div class="seg-bar-bg"><div class="seg-bar-fg" style="width:45%"></div></div><span class="seg-sz">$18B+</span></div>
-      <div class="seg"><span class="seg-name">Inland Marine</span><div class="seg-bar-bg"><div class="seg-bar-fg" style="width:38%"></div></div><span class="seg-sz">$15B+</span></div>
+    <h2 class="stitle reveal">A $1 trillion market<br>being <em>disrupted from within.</em></h2>
+    <p class="market-sub reveal">The U.S. P&C market crossed $1 trillion in direct premiums for the first time in 2024. Signal targets the commercial specialty segment — where complexity, data scarcity, and legacy infrastructure create the greatest opportunity for a disciplined, tech-enabled carrier.</p>
+    <div class="market-split reveal">
+      <div class="market-split-bar">
+        <div class="market-split-seg personal">
+          <span class="market-split-lbl">Personal Lines</span>
+          <span class="market-split-pct">$535B</span>
+        </div>
+        <div class="market-split-seg commercial">
+          <span class="market-split-lbl">Commercial Lines</span>
+          <span class="market-split-pct">$502B</span>
+        </div>
+      </div>
+      <div class="market-split-note">U.S. P&C — $1.05T direct premiums written 2024 · Source: S&P Global Market Intelligence / NAIC</div>
     </div>
-    <div class="market-total reveal">Total addressable market <strong>~$711B+</strong> in annual U.S. written premium</div>
+    <div class="market-geo reveal">Signal Target Lines — U.S. Commercial Specialty Annual Written Premium</div>
+    <div class="seg-list reveal">
+      <div class="seg"><span class="seg-name">General &amp; Excess Liability</span><div class="seg-bar-bg"><div class="seg-bar-fg" style="width:90%"></div></div><span class="seg-sz">~$123B</span></div>
+      <div class="seg"><span class="seg-name">Commercial Property</span><div class="seg-bar-bg"><div class="seg-bar-fg" style="width:85%"></div></div><span class="seg-sz">~$104B</span></div>
+      <div class="seg"><span class="seg-name">Excess &amp; Surplus Lines</span><div class="seg-bar-bg"><div class="seg-bar-fg" style="width:78%"></div></div><span class="seg-sz">~$98B</span></div>
+      <div class="seg"><span class="seg-name">Commercial Auto</span><div class="seg-bar-bg"><div class="seg-bar-fg" style="width:58%"></div></div><span class="seg-sz">~$71B</span></div>
+      <div class="seg"><span class="seg-name">Commercial Multiple Peril</span><div class="seg-bar-bg"><div class="seg-bar-fg" style="width:48%"></div></div><span class="seg-sz">~$58B</span></div>
+      <div class="seg"><span class="seg-name">Workers' Compensation</span><div class="seg-bar-bg"><div class="seg-bar-fg" style="width:45%"></div></div><span class="seg-sz">~$55B</span></div>
+      <div class="seg"><span class="seg-name">Medical Professional Liability</span><div class="seg-bar-bg"><div class="seg-bar-fg" style="width:18%"></div></div><span class="seg-sz">~$18B</span></div>
+      <div class="seg"><span class="seg-name">Cyber Insurance</span><div class="seg-bar-bg"><div class="seg-bar-fg" style="width:8%"></div></div><span class="seg-sz">~$9B</span></div>
+    </div>
+    <div class="market-total reveal">Total commercial lines market <strong>~$502B</strong> in annual U.S. written premium · Source: S&P Global / NAIC 2024</div>
   </div>
   <div class="market-visual"><canvas id="mcanvas"></canvas></div>
 </section>
@@ -503,22 +523,28 @@ footer { background: var(--ink); padding: 44px 52px; display: flex; align-items:
       <div class="tcard-bar bl"></div>
       <h3 class="tcard-name">Founding CEO</h3>
       <p class="tcard-role">Chief Executive Officer</p>
-      <p class="tcard-bio">20+ years scaling specialty P&C platforms from formation through profitable exit. Led underwriting strategy for multiple top-20 E&S carriers. Deep authority on complex risk pricing and reinsurance structure.</p>
+      <p class="tcard-bio">20+ years building and scaling specialty P&C portfolios and underwriting teams within leading carriers. Deep authority on complex risk pricing, reinsurance structure, and carrier formation.</p>
       <p class="tcard-prev">Background: E&S Carriers · Specialty Lines · Reinsurance</p>
     </div>
     <div class="tcard reveal">
       <div class="tcard-bar go"></div>
       <h3 class="tcard-name">Founding CUO</h3>
       <p class="tcard-role">Chief Underwriting Officer</p>
-      <p class="tcard-bio">25+ years of specialty lines leadership with a data-first approach to risk selection. Developed proprietary loss models across environmental and climate-exposed commercial lines with measurable outperformance.</p>
+      <p class="tcard-bio">25+ years of specialty lines leadership with a data-first approach to risk selection. Built proprietary loss models and underwriting frameworks across environmental and climate-exposed commercial lines.</p>
       <p class="tcard-prev">Background: Global Reinsurance · Specialty Carriers · Lloyd's</p>
     </div>
     <div class="tcard reveal">
       <div class="tcard-bar te"></div>
       <h3 class="tcard-name">Founding CFO</h3>
       <p class="tcard-role">Chief Financial Officer</p>
-      <p class="tcard-bio">Carrier-side finance executive experienced in structuring growth capital, reinsurance towers, and investor reporting for startup and growth-stage specialty insurers. Deep institutional LP relationships.</p>
+      <p class="tcard-bio">Carrier-side finance executive with deep experience structuring growth capital, reinsurance towers, and investor reporting for specialty insurers. Strong institutional and LP relationships across the market.</p>
       <p class="tcard-prev">Background: Bermuda Market · Institutional Capital · ILS</p>
+    </div>
+  </div>
+  <div class="team-stealth reveal">
+    <div class="team-stealth-inner">
+      <span class="team-stealth-dot"></span>
+      <p class="team-stealth-text">Signal is currently in stealth. The founding team is operating confidentially while we build. To learn more, <a href="#contact" class="team-stealth-link">get in touch</a>.</p>
     </div>
   </div>
 </section>
@@ -547,10 +573,10 @@ footer { background: var(--ink); padding: 44px 52px; display: flex; align-items:
     <p class="modal-body">Send us an email and we'll get back to you with the investor deck and arrange a conversation.</p>
     <div class="modal-addr-box">
       <p class="modal-addr-lbl">Send to</p>
-      <p class="modal-addr">hello@signalinsurancegroup.com</p>
+      <p class="modal-addr">hello&#64;signalinsurancegroup.com</p>
     </div>
     <div class="modal-actions">
-      <a class="modal-email-a" id="modal-email-link" href="mailto:hello@signalinsurancegroup.com?subject=Investor%20Deck%20Request">Open Email App</a>
+      <a class="modal-email-a" id="modal-email-link" href="mailto:hello&#64;signalinsurancegroup.com?subject=Investor%20Deck%20Request">Open Email App</a>
       <button class="modal-copy-btn" id="modal-copy">Copy Address</button>
     </div>
   </div>
@@ -602,7 +628,7 @@ footer { background: var(--ink); padding: 44px 52px; display: flex; align-items:
 /* ══ MARKET CANVAS ══ */
 (function(){
   const cv=document.getElementById('mcanvas'),ctx=cv.getContext('2d');let W,H,t=0;
-  const S=[{l:'Comm. Property',r:.61,c:'#1a4b8c',a:0},{l:'MGA Programs',r:.57,c:'#c07d2a',a:1.05},{l:'E&S Lines',r:.53,c:'#2563b8',a:2.10},{l:'Construction',r:.51,c:'#1a8c7a',a:3.14},{l:'Tech E&O',r:.47,c:'#4a6a8a',a:4.19},{l:'Environmental',r:.43,c:'#6a8aaa',a:5.24},{l:'Inland Marine',r:.39,c:'#8faab8',a:0.52}];
+  const S=[{l:'General Liability',r:.61,c:'#1a4b8c',a:0},{l:'Comm. Property',r:.57,c:'#c07d2a',a:1.05},{l:'E&S Lines',r:.53,c:'#2563b8',a:2.10},{l:'Comm. Auto',r:.51,c:'#1a8c7a',a:3.14},{l:'Multiple Peril',r:.47,c:'#4a6a8a',a:4.19},{l:"Workers' Comp",r:.43,c:'#6a8aaa',a:5.24},{l:'Med. Liability',r:.39,c:'#8faab8',a:0.52}];
   function init(){W=cv.width=cv.offsetWidth;H=cv.height=cv.offsetHeight;}
   function draw(){ctx.clearRect(0,0,W,H);t+=.004;const cx=W/2,cy=H/2,mr=Math.min(W,H)*.40;[.5,.7,.9].forEach(s=>{ctx.beginPath();ctx.arc(cx,cy,mr*s,0,Math.PI*2);ctx.strokeStyle='rgba(26,75,140,.07)';ctx.lineWidth=.8;ctx.stroke();});const cg=ctx.createRadialGradient(cx,cy,0,cx,cy,24);cg.addColorStop(0,'rgba(26,75,140,.22)');cg.addColorStop(1,'rgba(26,75,140,0)');ctx.beginPath();ctx.arc(cx,cy,24,0,Math.PI*2);ctx.fillStyle=cg;ctx.fill();ctx.beginPath();ctx.arc(cx,cy,7,0,Math.PI*2);ctx.fillStyle='#1a4b8c';ctx.fill();ctx.beginPath();ctx.arc(cx,cy,12,0,Math.PI*2);ctx.strokeStyle='rgba(26,75,140,.28)';ctx.lineWidth=1;ctx.stroke();S.forEach((s,i)=>{const ang=s.a+t*(i%2===0?.16:-.12),nx=cx+Math.cos(ang)*mr*s.r,ny=cy+Math.sin(ang)*mr*s.r;ctx.beginPath();ctx.moveTo(cx,cy);ctx.lineTo(nx,ny);ctx.strokeStyle=s.c+'30';ctx.lineWidth=.8;ctx.stroke();const nr=16+i*2,ng=ctx.createRadialGradient(nx,ny,0,nx,ny,nr*2.2);ng.addColorStop(0,s.c+'55');ng.addColorStop(1,s.c+'00');ctx.beginPath();ctx.arc(nx,ny,nr*2.2,0,Math.PI*2);ctx.fillStyle=ng;ctx.fill();ctx.beginPath();ctx.arc(nx,ny,nr*.5,0,Math.PI*2);ctx.fillStyle=s.c+'cc';ctx.fill();const lx=cx+Math.cos(ang)*(mr*s.r+nr*.5+18),ly=cy+Math.sin(ang)*(mr*s.r+nr*.5+18);ctx.font='500 10px Geist,sans-serif';ctx.fillStyle='#4a6a8a';ctx.textAlign=lx>cx?'left':'right';ctx.textBaseline='middle';ctx.fillText(s.l,lx,ly);});requestAnimationFrame(draw);}
   new ResizeObserver(init).observe(cv.parentElement);init();draw();
@@ -623,16 +649,17 @@ document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
 /* ══ MODAL ══ */
 (function(){
   const modal=document.getElementById('modal'),closeBtn=document.getElementById('modal-close'),submitBtn=document.getElementById('cta-submit'),emailInput=document.getElementById('cta-email'),emailLink=document.getElementById('modal-email-link'),copyBtn=document.getElementById('modal-copy');
+  const ADDR='hello@signalinsurancegroup.com';
   submitBtn.addEventListener('click',function(){
     const val=emailInput.value.trim();
     const body=val?'Hi,\n\nI would like to request the Signal Insurance investor deck.\n\nPlease reply to: '+val+'\n\nThank you.':'Hi,\n\nI would like to request the Signal Insurance investor deck.\n\nThank you.';
-    emailLink.href='mailto:hello@signalinsurancegroup.com?subject=Investor%20Deck%20Request&body='+encodeURIComponent(body);
+    emailLink.href='mailto:'+ADDR+'?subject=Investor%20Deck%20Request&body='+encodeURIComponent(body);
     modal.classList.add('open');
   });
   closeBtn.addEventListener('click',function(){modal.classList.remove('open');});
   modal.addEventListener('click',function(e){if(e.target===modal)modal.classList.remove('open');});
   copyBtn.addEventListener('click',function(){
-    navigator.clipboard.writeText('hello@signalinsurancegroup.com').then(function(){copyBtn.textContent='Copied ✓';setTimeout(function(){copyBtn.textContent='Copy Address';},2000);}).catch(function(){copyBtn.textContent='hello@signalinsurancegroup.com';});
+    navigator.clipboard.writeText(ADDR).then(function(){copyBtn.textContent='Copied ✓';setTimeout(function(){copyBtn.textContent='Copy Address';},2000);}).catch(function(){copyBtn.textContent=ADDR;});
   });
 })();
 </script>
